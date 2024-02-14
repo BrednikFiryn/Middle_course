@@ -565,6 +565,7 @@ GameObject:
   - component: {fileID: 593057662}
   - component: {fileID: 593057664}
   - component: {fileID: 593057663}
+  - component: {fileID: 593057665}
   m_Layer: 5
   m_Name: Shoot_Button
   m_TagString: Untagged
@@ -605,7 +606,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6415094, g: 0.2208971, b: 0.2208971, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -630,6 +631,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 593057661}
   m_CullTransparentMesh: 1
+--- !u!114 &593057665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593057661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ControlPath: <Keyboard>/space
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -3896,7 +3910,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.3
   health: 0
-  boost: 0.3
   ShootAction: {fileID: 6991399825491248007}
   MoveAction: {fileID: 6991399825491248005}
   BoostAction: {fileID: 6991399825491248006}
@@ -3939,5 +3952,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 0}
-  shootDelay: 0
+  shootDelay: 2
   anim: {fileID: 6991399825491248002}

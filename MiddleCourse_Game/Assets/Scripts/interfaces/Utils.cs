@@ -8,7 +8,7 @@ namespace DefaultNamespace
     public static class Utils
     {
         /// <summary>
-        /// ¬озвращает все колайдеры на объекте
+        /// Ётот метод возвращает список всех коллайдеров, присоединенных к указанному игровому объекту.
         /// </summary>
         /// <param name="go"></param>
         /// <returns></returns>
@@ -18,7 +18,7 @@ namespace DefaultNamespace
         }
 
         /// <summary>
-        ///  онверси€ в мировое пространство BoxCollider
+        /// Ётот метод конвертирует параметры BoxCollider из локального пространства в мировое пространство.
         /// </summary>
         /// <param name="box"></param>
         /// <param name="center"></param>
@@ -37,7 +37,7 @@ namespace DefaultNamespace
 
 
         /// <summary>
-        ///  онверси€ в мировое пространство CapsuleCollider
+        /// Ётот метод конвертирует параметры CapsuleCollider из локального пространства в мировое пространство.
         /// </summary>
         /// <param name="box"></param>
         /// <param name="center"></param>
@@ -84,7 +84,7 @@ namespace DefaultNamespace
         }
 
         /// <summary>
-        ///  онверси€ в мировое пространство SphereCollider
+        /// Ётот метод конвертирует параметры SphereCollider из локального пространства в мировое пространство.
         /// </summary>
         /// <param name="box"></param>
         /// <param name="center"></param>
@@ -97,6 +97,7 @@ namespace DefaultNamespace
             radius = sphere.radius * Max(Abs(transform.lossyScale));
         }
 
+        //Ёти вспомогательные методы используютс€ дл€ вычислени€ абсолютных значений и максимального значени€ вектора.
         private static float3 Abs(float3 v)
         {
             return new float3(Mathf.Abs(v.x), Mathf.Abs(v.y), Mathf.Abs(v.z));
@@ -108,3 +109,14 @@ namespace DefaultNamespace
         }
     }
 }
+
+/* 
+### “ехническа€ документаци€:
+
+### ќбщее описание
+
+ ласс Utils предоставл€ет статические методы дл€ работы с коллайдерами в Unity. 
+ќн содержит методы дл€ конвертации параметров коллайдеров из локального пространства в мировое пространство,
+что может быть полезно при работе с различными физическими вычислени€ми и взаимодействи€ми объектов.
+*/
+
