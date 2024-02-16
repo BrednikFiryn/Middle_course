@@ -30,12 +30,16 @@ public class CharacterShootSystem : ComponentSystem
           //Деструктуризация параметров для доступа к компонентам каждой сущности: entity, inputData, input.
           (Entity entity, UserInputData input, ref InputData inputData) =>
           {
-              //Проверка, что значение ввода shoot > 0, действия стрельбы сужествует и является ли оно экземпляром класса moveAbility.
-              if (inputData.shoot > 0f && input.ShootAction != null && input.ShootAction is IAbility ability)
+              //Проверка, что действия стрельбы сужествует и является ли оно экземпляром класса moveAbility.
+              if (input.ShootAction != null && input.ShootAction is IAbility ability)
               {
-                  //Вызов метода Execute() для выполнения действия стрельбы.
-                  ability.Execute();       
-              }                    
+                  //Проверка, что значение ввода shoot > 0
+                  if (inputData.shoot > 0f)
+                  {
+                      //Вызов метода Execute() для выполнения действия стрельбы.
+                      ability.Execute();
+                  }                     
+              }         
           });
     }
 }

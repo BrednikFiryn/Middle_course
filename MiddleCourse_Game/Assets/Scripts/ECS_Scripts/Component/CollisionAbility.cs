@@ -18,7 +18,7 @@ public class CollisionAbility : MonoBehaviour, IConvertGameObjectToEntity, IAbil
     public List<MonoBehaviour> collisionActions = new List<MonoBehaviour>(); 
     public List<IAbilityTarget> collisionActionsAbiliities = new List<IAbilityTarget>();
 
-    [HideInInspector]public List<Collider> collisions;
+    [HideInInspector] public List<Collider> collisions;
 
     /// <summary>
     /// Перебирает каждое коллизионное действие.
@@ -29,7 +29,7 @@ public class CollisionAbility : MonoBehaviour, IConvertGameObjectToEntity, IAbil
     {
         foreach (var action in collisionActions)
         {
-            if (action is IAbilityTarget ability) collisionActionsAbiliities.Add(ability); // Проверка явkяется ли action collisionAbility или нет
+            if (action is IAbilityTarget ability) collisionActionsAbiliities.Add(ability); // Проверка является ли action collisionAbility или нет
 
             else Debug.LogError("CollisionAction must derive from collisionAbility!");
         }
@@ -44,11 +44,11 @@ public class CollisionAbility : MonoBehaviour, IConvertGameObjectToEntity, IAbil
     {
         foreach (var action in collisionActionsAbiliities) // вызываем Execute() у какждого action в collisionActionsAbiliities
         {
-            action.Targets = new List<GameObject>(); // инициализация Targets
+            action.targets = new List<GameObject>(); // инициализация Targets
             // Доабвляем в список Targets gameObject каждого элемента списка
-            collisions.ForEach(c =>
+            collisions.ForEach(_collision =>
             {
-                if (c != null) action.Targets.Add(c.gameObject);
+                if (_collision != null) action.targets.Add(_collision.gameObject);
             });
             action.Execute();
         }
@@ -133,6 +133,8 @@ public class CollisionAbility : MonoBehaviour, IConvertGameObjectToEntity, IAbil
                 });
                 break;
         }
+
+        Collider.enabled = false;
     }
 }
 

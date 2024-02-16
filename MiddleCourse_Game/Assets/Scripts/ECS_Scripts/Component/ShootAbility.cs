@@ -3,24 +3,27 @@ using UnityEngine;
 
 public class ShootAbility : MonoBehaviour, IAbility
 {
-    public GameObject bullet;
-    public float shootDelay;
-    public Animator anim;
+    [SerializeField] private GameObject bullet;
+    [SerializeField] private float shootDelay;
+    [SerializeField] private float bulletSpeed = 100f;
+
 
     private float shootTime = float.MinValue;
 
     public void Execute()
     {
-
         if (Time.time < shootTime + shootDelay) return; // если время еще не прошло то возвращаем действие
 
         shootTime = Time.time;
-        anim.SetTrigger("RunGun");
 
         if (bullet != null)
         {
-            var t = transform;
-            var NewBullet = Instantiate(bullet, t.position, t.rotation);
+            var _transform = this.transform;
+            bullet.transform.position = _transform.position;
+            bullet.SetActive(true);
+
+            Rigidbody rb = bullet.GetComponent<Rigidbody>();
+            rb.velocity = _transform.forward * bulletSpeed;
         }
 
         else Debug.Log("[SHOOT ABILITY] No bullet prefab link!");

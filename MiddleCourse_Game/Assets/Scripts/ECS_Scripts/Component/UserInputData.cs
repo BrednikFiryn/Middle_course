@@ -9,7 +9,7 @@ using UnityEngine;
 public class UserInputData : MonoBehaviour, IConvertGameObjectToEntity 
 {
      public float speed;
-     public int health;
+     public float health;
 
      public MonoBehaviour ShootAction;
      public MonoBehaviour MoveAction;

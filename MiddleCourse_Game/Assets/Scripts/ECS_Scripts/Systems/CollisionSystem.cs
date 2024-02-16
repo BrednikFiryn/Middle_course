@@ -3,8 +3,6 @@ using Unity.Entities;
 using UnityEngine;
 using Unity.Mathematics;
 using UnityEngine.Tilemaps;
-using System.Linq;
-using System.Collections.Generic;
 
 namespace DefaultNamespace.Systems
 {
@@ -13,7 +11,6 @@ namespace DefaultNamespace.Systems
         private EntityQuery collisionQuery;
 
         private Collider[] results = new Collider[50]; // то с чем мы сталкиваемся 
-        private List<Collider> resultsList = new List<Collider>();
 
         protected override void OnCreate()
         {
