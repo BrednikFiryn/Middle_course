@@ -12,5 +12,4 @@ public class BulletBehaviour : MonoBehaviour
             gameObject.transform.position = new Vector3(0, -5, 0);
         }
     }
-
 }

@@ -11,7 +11,7 @@ public class ShootAbility : MonoBehaviour, IAbility
 
     public void Execute()
     {
-        if (Time.time < shootTime + shootDelay) return; // åñëè âðåìÿ åùå íå ïðîøëî òî âîçâðàùàåì äåéñòâèå
+        if (Time.time < shootTime + shootDelay) return; // Ã¥Ã±Ã«Ã¨ Ã¢Ã°Ã¥Ã¬Ã¿ Ã¥Ã¹Ã¥ Ã­Ã¥ Ã¯Ã°Ã®Ã¸Ã«Ã® Ã²Ã® Ã¢Ã®Ã§Ã¢Ã°Ã Ã¹Ã Ã¥Ã¬ Ã¤Ã¥Ã©Ã±Ã²Ã¢Ã¨Ã¥
 
         shootTime = Time.time;
 

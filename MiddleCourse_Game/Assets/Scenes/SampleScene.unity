@@ -3281,6 +3281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 5504414524287281314}
+  rb: {fileID: 0}
   shootDelay: 2
   bulletSpeed: 50
 --- !u!1 &1743176304
@@ -3946,7 +3947,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a7aa01b5eb2cb944aaf621a3b740d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootAbility: {fileID: 1719447233}
 --- !u!198 &6944038648561344956
 ParticleSystem:
   m_ObjectHideFlags: 0
