@@ -113,7 +113,7 @@ public class CollisionAbility : MonoBehaviour, IConvertGameObjectToEntity, IAbil
 
             // //Если тип коллайдера совпадает с BoxCollider, выполняем следующий блок кода.
             case BoxCollider box:
-                //Вызываем метод ToWorldSpaceBox, чтобы преобразовать локальные координаты капсулы в глобальные координаты.
+                //Вызываем метод ToWorldSpaceBox, чтобы преобразовать локальные координаты куба в глобальные координаты.
                 //Результаты(центр куба boxCenter, содержимое куба boxHalfExtents и ориентация куба boxOrientation) сохраняются в локальные переменные.
                 box.ToWorldSpaceBox(out var boxCenter, out var boxHalfExtents, out var boxOrientation);
                 //Добавляем компонент данных ActorColliderData в менеджер сущностей dstManager для сущности entity

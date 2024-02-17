@@ -7,7 +7,6 @@ public class ShootAbility : MonoBehaviour, IAbility
     [SerializeField] private float shootDelay;
     [SerializeField] private float bulletSpeed = 100f;
 
-
     private float shootTime = float.MinValue;
 
     public void Execute()
@@ -21,7 +20,6 @@ public class ShootAbility : MonoBehaviour, IAbility
             var _transform = this.transform;
             bullet.transform.position = _transform.position;
             bullet.SetActive(true);
-
             Rigidbody rb = bullet.GetComponent<Rigidbody>();
             rb.velocity = _transform.forward * bulletSpeed;
         }
