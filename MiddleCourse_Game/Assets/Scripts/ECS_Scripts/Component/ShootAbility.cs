@@ -6,7 +6,7 @@ public class ShootAbility : MonoBehaviour, IAbility
 {
     [SerializeField] private GameObject _bullet;
     [SerializeField] private float _shootDelay;
-    [SerializeField] public float _bulletSpeed = 100f;
+    [SerializeField] private float _bulletSpeed = 100f;
     private float _shootTime = float.MinValue;
 
     public void Execute()

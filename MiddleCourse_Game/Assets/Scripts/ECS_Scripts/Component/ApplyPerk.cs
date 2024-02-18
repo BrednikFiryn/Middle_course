@@ -25,7 +25,9 @@ public class ApplyPerk : MonoBehaviour, IAbilityTarget
     {
         foreach (var target in targets)
         {
-            if (target != null && target.CompareTag("Player") && gameObject.CompareTag("Rebound"))
+            var health = target.GetComponent<PlayerStats>();
+
+            if (target != null && target.GetComponent<MoveAbility>() && gameObject.GetComponent<ApplyPerk>())
             {
                 perk = true;
                 image.fillAmount = 1;

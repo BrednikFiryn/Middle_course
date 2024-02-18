@@ -379,7 +379,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99b2114623e57534d804829379b26d28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyTarget: {fileID: 0}
 --- !u!195 &56911192
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -428,7 +427,7 @@ GameObject:
   - component: {fileID: 131522320}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -713,7 +712,7 @@ MonoBehaviour:
     m_Top: 20
     m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: 30
+  m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -3141,7 +3140,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 200}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1441283145
 MonoBehaviour:
@@ -3249,7 +3248,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37c7819f603ede242a93ee5e2f5438f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  googleDriveUrl: https://drive.google.com/file/d/1qRLxv_Lpy0-_m01KuqOtvtfv6_8dwa-z/view?usp=drive_link
 --- !u!1 &1447148861
 GameObject:
   m_ObjectHideFlags: 0
@@ -3698,7 +3696,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 450, y: 150}
+  m_SizeDelta: {x: 400, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1631626628
 MonoBehaviour:
@@ -12101,7 +12099,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe7f171dcfc52bb4dae215d61f236d8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.6
+  speed: 0.5
   ShootAction: {fileID: 1719447233}
   MoveAction: {fileID: 6991399825491248005}
   BoostAction: {fileID: 6991399825491248006}
@@ -12173,7 +12171,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc5d48c75e5abf347abafe60381f35ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 6991399825491248010}
   _healthBar: {fileID: 1631626628}
 --- !u!114 &6991399825491248010
 MonoBehaviour:
@@ -12187,7 +12184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2841b994ee29a694f934aacc85c27949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 0
+  _health: 1
 --- !u!1 &7938978869351067385
 GameObject:
   m_ObjectHideFlags: 0

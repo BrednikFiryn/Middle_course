@@ -3,7 +3,12 @@ using UnityEngine;
 
 public class MoveAbility : MonoBehaviour, moveAbility
 {
-    public Animator anim;
+    private Animator anim;
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     public void Execute()
     {  

@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
+    private MoveAbility enemyTarget;
     private NavMeshAgent agent;
-    public MoveAbility enemyTarget;
 
     private void Awake()
     {

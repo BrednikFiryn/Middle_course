@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    public PlayerStats playerStats;
+    private PlayerStats playerStats;
     [SerializeField] private Image _healthBar;
     private float _health;
 
@@ -25,9 +25,9 @@ public class HealthBar : MonoBehaviour
 
     private void Start()
     {
+        playerStats = FindObjectOfType<PlayerStats>();
         playerStats.LoadPlayerData();
-        health = playerStats._health;
-        _healthBar.fillAmount = health;
+        HealthCheck();
     }
 
     public void HealthCheck()

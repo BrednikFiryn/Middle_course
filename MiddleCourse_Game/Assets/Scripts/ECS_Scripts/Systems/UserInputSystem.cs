@@ -86,11 +86,11 @@ public class UserInputSystem : ComponentSystem
     {
         // Начало цикла для каждой сущности, удовлетворяющей запросу inputQuery.
         Entities.With(inputQuery).ForEach(
-          (Entity entity, ref InputData inputData) => 
+          (Entity entity, ref ShootData shootData, ref InputData inputData) => 
             {
                 //Присвоение данных ввода
                 inputData.move = moveInput;
-                inputData.shoot = shootInput;
+                shootData.shoot = shootInput;
                 inputData.boost = boostInput;
             });
     }

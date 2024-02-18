@@ -9,7 +9,6 @@ using UnityEngine;
 public class UserInputData : MonoBehaviour, IConvertGameObjectToEntity 
 {
      public float speed;
-
      public MonoBehaviour ShootAction;
      public MonoBehaviour MoveAction;
      public MonoBehaviour BoostAction;
@@ -42,7 +41,6 @@ public class UserInputData : MonoBehaviour, IConvertGameObjectToEntity
 public struct InputData : IComponentData
 {
     public float2 move;
-    public float shoot;
     public float boost;
     public float Speed;
 }
@@ -52,7 +50,7 @@ public struct InputData : IComponentData
 /// </summary>
 public struct ShootData : IComponentData 
 {
-
+    public float shoot;
 }
 
 /* 

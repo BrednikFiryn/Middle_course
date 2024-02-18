@@ -28,13 +28,13 @@ public class CharacterShootSystem : ComponentSystem
         //-Внутри цикла данные из компонентов сущностей используются для определения направления движения и перемещения персонажа.
         Entities.With(shootQuery).ForEach(
           //Деструктуризация параметров для доступа к компонентам каждой сущности: entity, inputData, input.
-          (Entity entity, UserInputData input, ref InputData inputData) =>
+          (Entity entity, UserInputData input, ref ShootData shootData) =>
           {
-              //Проверка, что действия стрельбы сужествует и является ли оно экземпляром класса moveAbility.
+              //Проверка, что действия стрельбы существует и является ли оно экземпляром класса IAbility.
               if (input.ShootAction != null && input.ShootAction is IAbility ability)
               {
                   //Проверка, что значение ввода shoot > 0
-                  if (inputData.shoot > 0f)
+                  if (shootData.shoot > 0f)
                   {
                       //Вызов метода Execute() для выполнения действия стрельбы.
                       ability.Execute();

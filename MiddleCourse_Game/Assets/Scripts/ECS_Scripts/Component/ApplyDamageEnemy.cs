@@ -10,7 +10,7 @@ public class ApplyDamageEnemy : MonoBehaviour, IAbilityTarget
     {
         foreach (var target in targets)
         {
-            if (target != null && target.CompareTag("bullet"))
+            if (target != null && target.GetComponent<ApplyCollisionWall>() && gameObject.GetComponent<ApplyDamageEnemy>())
             {
                 gameObject.transform.position = new Vector3(0, -10, 0);
                 gameObject.SetActive(false);
