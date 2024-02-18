@@ -2,7 +2,6 @@ using Assets.ECS_2.interfaces;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
-using UnityEngine.UI;
 
 public class ApplyPerk : MonoBehaviour, IAbilityTarget
 {
@@ -15,7 +14,7 @@ public class ApplyPerk : MonoBehaviour, IAbilityTarget
     {
         foreach (var target in targets)
         {
-            if (target != null && target.CompareTag("Player"))
+            if (target != null && target.CompareTag("Player") && gameObject.CompareTag("Rebound"))
             {
                 perk = true;
                 perkIcon.SetActive(true);

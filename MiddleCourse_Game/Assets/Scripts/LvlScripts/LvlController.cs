@@ -3,5 +3,5 @@ using UnityEngine;
 
 public class LvlController : MonoBehaviour
 {
-    [SerializeField] private List<MonoBehaviour> monoBehaviours;
+    [SerializeField] private List<MonoBehaviour> _monoBehaviours;
 }

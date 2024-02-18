@@ -12,7 +12,7 @@ public class ApplyDamageEnemy : MonoBehaviour, IAbilityTarget
         {
             if (target != null && target.CompareTag("bullet"))
             {
-                gameObject.transform.position = new Vector3(0, -5, 0);
+                gameObject.transform.position = new Vector3(5, -10, 0);
                 gameObject.SetActive(false);
             }
 

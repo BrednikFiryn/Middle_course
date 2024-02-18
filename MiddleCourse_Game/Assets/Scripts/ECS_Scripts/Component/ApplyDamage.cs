@@ -11,14 +11,15 @@ public class ApplyDamage : MonoBehaviour, IAbilityTarget
     {
        foreach (var target in targets)
         {
-            var health = target.GetComponent<UserInputData>();
+            var health = target.GetComponent<HealthBar>();
 
-            if (target != null && health != null)
+            if (target != null && health != null && gameObject.CompareTag("Enemy"))
             {
                 if (health.health > 0f)
                 {
                     health.health -= damage;
-                    gameObject.transform.position =  new Vector3(0, -5, 0);
+                    Debug.LogError("Attack!!!!");
+                    gameObject.transform.position =  new Vector3(5, -5, 0);
                     gameObject.SetActive(false);
                 }
 

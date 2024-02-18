@@ -11,9 +11,9 @@ public class ApplyTreatment : MonoBehaviour, IAbilityTarget
     {
         foreach (var target in targets)
         {
-            var health = target.GetComponent<UserInputData>();
+            var health = target.GetComponent<HealthBar>();
 
-            if (target != null && health != null)
+            if (target != null && health != null && gameObject.CompareTag("Health"))
             {
                 if (health.health > 0f)
                 {

@@ -1,27 +1,49 @@
 using Assets.ECS_2.interfaces;
+using System;
 using UnityEngine;
 
 public class ShootAbility : MonoBehaviour, IAbility
 {
-    [SerializeField] private GameObject bullet;
-    [SerializeField] private float shootDelay;
-    [SerializeField] private float bulletSpeed = 100f;
+    [SerializeField] private GameObject _bullet;
+    [SerializeField] private float _shootDelay;
+    [SerializeField] public float _bulletSpeed = 100f;
+    private float _shootTime = float.MinValue;
 
-    private float shootTime = float.MinValue;
+    public PlayerStats playerStats;
+
+    private void PlayerStatsJson()
+    {
+        var jsonString = PlayerPrefs.GetString("Stats");
+        if (!jsonString.Equals(String.Empty, StringComparison.Ordinal))
+        {
+            playerStats = JsonUtility.FromJson<PlayerStats>(jsonString);
+        }
+
+        else
+        {
+            playerStats = new PlayerStats();
+        }
+    }
+
+    private void Start()
+    {
+        PlayerStatsJson();
+    }
 
     public void Execute()
     {
-        if (Time.time < shootTime + shootDelay) return; // åñëè âðåìÿ åùå íå ïðîøëî òî âîçâðàùàåì äåéñòâèå
+        if (Time.time < _shootTime + _shootDelay) return;
 
-        shootTime = Time.time;
+        _shootTime = Time.time;
 
-        if (bullet != null)
+        if (_bullet != null)
         {
+            _bullet.SetActive(true);
             var _transform = this.transform;
-            bullet.transform.position = _transform.position;
-            bullet.SetActive(true);
-            Rigidbody rb = bullet.GetComponent<Rigidbody>();
-            rb.velocity = _transform.forward * bulletSpeed;
+            _bullet.transform.position = _transform.position;
+            Rigidbody rb = _bullet.GetComponent<Rigidbody>();
+            rb.velocity = _transform.forward * _bulletSpeed;
+            playerStats.shootsCount++;
         }
 
         else Debug.Log("[SHOOT ABILITY] No bullet prefab link!");

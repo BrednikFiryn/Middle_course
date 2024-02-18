@@ -9,7 +9,6 @@ using UnityEngine;
 public class UserInputData : MonoBehaviour, IConvertGameObjectToEntity 
 {
      public float speed;
-     public float health;
 
      public MonoBehaviour ShootAction;
      public MonoBehaviour MoveAction;
@@ -27,7 +26,6 @@ public class UserInputData : MonoBehaviour, IConvertGameObjectToEntity
     {
         // AddComponentData: Добавляет компоненты данных в сущность, такие как InputData, ShootData и InterfaceData.
         dstManager.AddComponentData(entity, new InputData());
-        dstManager.AddComponentData(entity, new InterfaceData { Health = health });
 
         // Проверяет, заполнена ли переменная ShootAction и является ли она наследником интерфейса IAbility,
         // и, если это так, добавляет компонент ShootData.
@@ -57,14 +55,6 @@ public struct ShootData : IComponentData
 
 }
 
-/// <summary>
-/// Содержит информацию о здоровье объекта.
-/// </summary>
-public struct InterfaceData : IComponentData
-{
-    public float Health;
-}
-
 /* 
 ### Техническая документация:
 
@@ -72,7 +62,7 @@ public struct InterfaceData : IComponentData
 Этот код определяет класс UserInputData, который используется для управления вводом и хранения данных игрового объекта.
 
 #### 2. Ключевые особенности:
-- Переменные speed, health и boost определяют основные характеристики объекта.
+- Переменные speed и boost определяют основные характеристики объекта.
 - Convert метод используется для преобразования объекта в сущность Unity и добавления соответствующих компонент данных.
 - InputData, ShootData и InterfaceData определяют структуры данных для хранения важной информации.
 

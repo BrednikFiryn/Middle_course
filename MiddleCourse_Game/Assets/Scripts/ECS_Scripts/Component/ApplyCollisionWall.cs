@@ -15,19 +15,20 @@ public class ApplyCollisionWall : MonoBehaviour, IAbilityTarget
     {
         foreach (var target in targets)
         {
-            if (target != null && target.CompareTag("bullet"))
+            if (target != null && target.CompareTag("Wall"))
             {
                 //Если компонент applyPerk неактивен, текущий объект (пуля) становится неактивным и перемещается в новую позицию.
                 if (!applyPerk.perk)
-                {
-                    target.SetActive(false);
-                    target.transform.position = new Vector3(0, -5, 0);
+                { 
+                    gameObject.SetActive(false);
+                    gameObject.transform.position = new Vector3(0, -6, 0);
                 }
 
                 //Если компонент applyPerk активен, текущему объекту (пуле) прикладывается сила в случайном направлении в заданном диапазоне углов.
                 if (applyPerk.perk)
                 {
-                    Rigidbody rb = target.GetComponent<Rigidbody>();
+                    
+                    Rigidbody rb = gameObject.GetComponent<Rigidbody>();
                     float randomAngle = Random.Range(minAngle, maxAngle);
                     Vector3 randomDirection = Quaternion.Euler(0, randomAngle, 0) * Vector3.forward;
                     rb.AddForce(randomDirection * powerBounce, ForceMode.Impulse);

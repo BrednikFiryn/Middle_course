@@ -8,6 +8,8 @@ TagManager:
   - bullet
   - treatment
   - Wall
+  - Health
+  - Rebound
   layers:
   - Default
   - TransparentFX
