@@ -13,13 +13,13 @@ public class ApplyTreatment : MonoBehaviour, IAbilityTarget
         {
             var health = target.GetComponent<HealthBar>();
 
-            if (target != null && health != null && gameObject.CompareTag("Health"))
+            if (target != null && health != null)
             {
                 if (health.health > 0f)
                 {
                     health.health += treatment;
                     gameObject.SetActive(false);
-                    gameObject.transform.position = new Vector3(0, -5, 0);
+                    gameObject.transform.position = new Vector3(0, -15, 0);
                 }
 
                 else return;

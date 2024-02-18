@@ -19,7 +19,7 @@ public class ApplyDamage : MonoBehaviour, IAbilityTarget
                 {
                     health.health -= damage;
                     Debug.LogError("Attack!!!!");
-                    gameObject.transform.position =  new Vector3(5, -5, 0);
+                    gameObject.transform.position =  new Vector3(0, -10, 0);
                     gameObject.SetActive(false);
                 }
 

@@ -26,8 +26,7 @@ public class ApplyCollisionWall : MonoBehaviour, IAbilityTarget
 
                 //Если компонент applyPerk активен, текущему объекту (пуле) прикладывается сила в случайном направлении в заданном диапазоне углов.
                 if (applyPerk.perk)
-                {
-                    
+                {            
                     Rigidbody rb = gameObject.GetComponent<Rigidbody>();
                     float randomAngle = Random.Range(minAngle, maxAngle);
                     Vector3 randomDirection = Quaternion.Euler(0, randomAngle, 0) * Vector3.forward;
