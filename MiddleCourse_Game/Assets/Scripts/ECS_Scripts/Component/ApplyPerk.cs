@@ -9,7 +9,7 @@ public class ApplyPerk : MonoBehaviour, IAbilityTarget
     [SerializeField] private float perkTime;
     [SerializeField] private GameObject perkIcon;
     [SerializeField] private Image image;
-    private float perkTimeMax = float.MinValue;
+
     public bool perk;
     public List<GameObject> targets { get; set; }
 
@@ -44,7 +44,6 @@ public class ApplyPerk : MonoBehaviour, IAbilityTarget
 
     private IEnumerator EndPerkRoutine()
     {
-        perkTimeMax = Time.time;
         yield return new WaitForSeconds(perkTime);
         perkIcon.SetActive(false);
         image.fillAmount = 1;

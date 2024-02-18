@@ -1,15 +1,12 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 
 public class HealthBar : MonoBehaviour
 {
-    [SerializeField] private Settings _settings;
+    public PlayerStats playerStats;
     [SerializeField] private Image _healthBar;
-    private float _health = int.MaxValue;
-
-    public ShootAbility shootAbility;
+    private float _health;
 
     public float health
     {
@@ -17,33 +14,28 @@ public class HealthBar : MonoBehaviour
         set
         {
             _health = value;
-            if (health <= 0)
+            if (_health <= 0)
             {
-                Destroy(this.gameObject);
+                gameObject.SetActive(false);
+                _health = 0;
             }
-            WriteStatistics();
+            else if (_health > 1) health = 1;
         }
-    }
-
-    private void WriteStatistics()
-    {
-        var jsonString = JsonUtility.ToJson(shootAbility.playerStats);
-        Debug.Log(jsonString);
-        PlayerPrefs.SetString("Stats", jsonString);
     }
 
     private void Start()
     {
-        health = _settings.HeroHealth;
+        playerStats.LoadPlayerData();
+        health = playerStats._health;
+        _healthBar.fillAmount = health;
     }
 
-    void Update()
+    public void HealthCheck()
     {
-        HealthCheck();
-    }
-
-    private void HealthCheck()
-    {
-        _healthBar.fillAmount = health;  
+        health = playerStats._health;
+        _healthBar.fillAmount = health;
     }
 }
+
+
+
