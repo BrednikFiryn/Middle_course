@@ -1,6 +1,7 @@
 using Assets.ECS_2.interfaces;
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.AI;
 
 public class ApplyDamageEnemy : MonoBehaviour, IAbilityTarget
 {
@@ -10,10 +11,12 @@ public class ApplyDamageEnemy : MonoBehaviour, IAbilityTarget
     {
         foreach (var target in targets)
         {
-            if (target != null && target.GetComponent<ApplyCollisionWall>() && gameObject.GetComponent<ApplyDamageEnemy>())
+
+            if (target != null && target.GetComponent<ApplyDamage>() && gameObject.GetComponent<ApplyDamageEnemy>())
             {
-                gameObject.transform.position = new Vector3(0, -10, 0);
-                gameObject.SetActive(false);
+                target.transform.position = new Vector3(0, -10, 0);
+                target.SetActive(false);
+                Destroy(target.GetComponent<NavMeshAgent>());
             }
 
             else return;

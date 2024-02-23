@@ -1,62 +1,49 @@
 using Assets.ECS_2.interfaces;
-using System.Collections.Generic;
 using Unity.Entities;
-using UnityEngine;
 
-/// <summary>
-/// Класс наследует от ComponentSystem, что позволяет ему обрабатывать сущности Unity в системной манере.
-/// </summary>
 public class AIEvaluateSystem : ComponentSystem
 {
-    //Объявление переменной moveQuery для запроса сущностей.
     private EntityQuery _evaluateQuery;
 
     /// <summary>
-    /// Вызывается при создании системы и устанавливает запрос для получения сущностей.
+    /// Переопределяет метод OnCreate из ComponentSystem.
     /// </summary>
     protected override void OnCreate()
     {
-        // Инициализация переменной moveQuery запросом сущностей, содержащих компонент AIAgent;
+        // Инициализирует _evaluateQuery для запроса сущностей с компонентом AIAgent.
         _evaluateQuery = GetEntityQuery(ComponentType.ReadOnly<AIAgent>());
     }
 
     /// <summary>
-    /// Вызывается каждый кадр для обновления данных в компонентах сущностей. Обрабатывает логику перемещения персонажа.
+    /// Переопределяет метод OnUpdate из ComponentSystem.
     /// </summary>
     protected override void OnUpdate()
     {
-        //- Цикл Entities.With(_evaluateQuery).ForEach перебирает все сущности, удовлетворяющие запросу.
-        //-Внутри цикла данные из компонентов сущностей используются для определения направления движения и перемещения персонажа.
+        // Перебирает сущности с необходимыми компонентами.
         Entities.With(_evaluateQuery).ForEach(
-        //Деструктуризация параметров для доступа к компонентам сущности manager.
+        // Лямбда-функция, определяющая действия для каждой сущности и ее ассоциированного BehaviourManager.
         (Entity entity, BehaviourManager manager) =>
         {
-            IBehaviour bestBehaviour;
+            // Инициализирует hightScore самым низким возможным значением.
             float hightScore = float.MinValue;
-
+            // Сбрасывает активное поведение менеджера.
+            manager.activeBehaviour = null;
+            //  Перебирает поведения в менеджере.
             foreach (var behaviour in manager._behaviours)
             {
+                // Проверяет, реализует ли поведение интерфейс IBehaviour.
                 if (behaviour is IBehaviour ai)
                 {
+                    // Оценивает текущее поведение и сохраняет балл.
                     var currentScore = ai.Evaluate();
-
+                    // Обновляет наивысший балл и активное поведение, если текущий балл выше.
+                    if (currentScore > hightScore)
+                    {
+                        hightScore = currentScore;
+                        manager.activeBehaviour = ai;
+                    }
                 }
             }
         });
     }
 }
-
-/* 
-### Техническая документация:
-
-#### 1. Назначение:
-Этот код определяет систему для управления ускорения персонажа в игре на основе пользовательского ввода.
-
-#### 2. Ключевые особенности:
-- Система работает с сущностями, которые имеют компоненты InputData, UserInputData.
-- При каждом обновлении системы персонаж ускоряется в соответствии с данными ввода.
-- Для выполнения конкретных действий перемещения используется компонент UserInputData, который содержит ссылку на экземпляр интерфейса moveAbility.
-
-#### 3. Использование:
-Эта система может быть применена к сущностям, которые должны ускорять перемещение по миру игры на основе пользовательского ввода.
-*/

@@ -45,6 +45,12 @@ public class PlayerStats : MonoBehaviour
     public void Damage(float damage)
     {
         _health -= damage;
+
+        if (damage >= _health)
+        {
+            _health = 0;
+        }
+        else return;
     }
 
     public void Healing(float health)

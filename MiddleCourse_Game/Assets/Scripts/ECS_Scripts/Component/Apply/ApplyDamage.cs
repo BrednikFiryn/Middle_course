@@ -4,21 +4,12 @@ using System.Collections.Generic;
 
 public class ApplyDamage : MonoBehaviour, IAbilityTarget
 {
-    [SerializeField] private float damage;
-    private HealthBar healthBar;
+    public bool attack = true;
     public List<GameObject> targets { get; set; }
-
-    private void Start()
-    {
-        healthBar = FindObjectOfType<HealthBar>();
-
-    }
 
     public void Execute()
     {
-       if (healthBar == null) return;
-       
-       foreach (var target in targets)
+        foreach (var target in targets)
         {
             var health = target.GetComponent<PlayerStats>();
 
@@ -26,14 +17,10 @@ public class ApplyDamage : MonoBehaviour, IAbilityTarget
             {
                 if (health._health > 0f)
                 {
-                    health.Damage(damage);
-                    healthBar.HealthCheck();
-                    health.SavePlayerData();
-                    gameObject.transform.position =  new Vector3(0, -10, 0);
-                    gameObject.SetActive(false);
+                    attack = true;
                 }
 
-                else return;
+                else attack = false;                  
             }
         }
     }
