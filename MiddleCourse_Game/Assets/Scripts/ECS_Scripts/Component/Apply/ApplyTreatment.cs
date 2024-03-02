@@ -1,4 +1,4 @@
-using Assets.ECS_2.interfaces;
+using DefaultNamespace;
 using UnityEngine;
 using System.Collections.Generic;
 
@@ -21,7 +21,7 @@ public class ApplyTreatment : MonoBehaviour, IAbilityTarget
         {
             var health = target.GetComponent<PlayerStats>();
 
-            if (target != null && health != null && gameObject.GetComponent<ApplyTreatment>())
+            if (target != null && !target.GetComponent<ApplyDamage>() && target.GetComponent<MoveAbility>())
             {
                 if (health._health < 1f)
                 {

@@ -1,6 +1,6 @@
-using Assets.ECS_2.interfaces;
-using System;
-using UnityEngine;
+using DefaultNamespace;
+using System;using UnityEngine;
+using Zenject;
 
 public class ShootAbility : MonoBehaviour, IAbility
 {
@@ -9,6 +9,12 @@ public class ShootAbility : MonoBehaviour, IAbility
     [SerializeField] private float _bulletSpeed = 100f;
     private float _shootTime = float.MinValue;
 
+    [Inject]
+    public void Construct(BindBullet bindBullet)
+    {
+        _bullet = bindBullet.bullet;
+    }
+
     public void Execute()
     {
         if (Time.time < _shootTime + _shootDelay) return;
@@ -16,7 +22,7 @@ public class ShootAbility : MonoBehaviour, IAbility
         _shootTime = Time.time;
 
         if (_bullet != null)
-        {
+        { 
             _bullet.SetActive(true);
             var _transform = this.transform;
             _bullet.transform.position = _transform.position;

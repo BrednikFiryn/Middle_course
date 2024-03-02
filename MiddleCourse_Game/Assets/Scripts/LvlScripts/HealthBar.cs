@@ -4,8 +4,9 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    private PlayerStats playerStats;
-    [SerializeField] private Image _healthBar;
+    private GameObject _healthBar;
+    private PlayerStats _playerStats;
+    private Image _healthCount;
     private float _health;
 
     public float health
@@ -18,6 +19,7 @@ public class HealthBar : MonoBehaviour
             {
                 gameObject.SetActive(false);
                 _health = 0;
+                _playerStats.EntityDestroy();
             }
             else if (_health > 1) health = 1;
         }
@@ -25,15 +27,22 @@ public class HealthBar : MonoBehaviour
 
     private void Start()
     {
-        playerStats = FindObjectOfType<PlayerStats>();
-        playerStats.LoadPlayerData();
+        HealthStatus();
         HealthCheck();
     }
 
     public void HealthCheck()
     {
-        health = playerStats._health;
-        _healthBar.fillAmount = health;
+        health = _playerStats._health;
+        _healthCount.fillAmount = health;
+    }
+
+    private void HealthStatus()
+    {
+        _playerStats = FindObjectOfType<PlayerStats>();
+        _healthBar = GameObject.FindGameObjectWithTag("Health");
+        _healthCount = _healthBar.GetComponent<Image>();
+        _playerStats.LoadPlayerData();
     }
 }
 

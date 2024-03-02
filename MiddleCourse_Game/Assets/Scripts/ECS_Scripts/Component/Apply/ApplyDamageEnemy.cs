@@ -1,4 +1,4 @@
-using Assets.ECS_2.interfaces;
+using DefaultNamespace;
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.AI;

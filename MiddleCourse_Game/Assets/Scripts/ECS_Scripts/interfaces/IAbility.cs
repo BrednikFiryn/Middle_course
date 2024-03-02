@@ -1,6 +1,4 @@
-﻿
-
-namespace Assets.ECS_2.interfaces
+﻿namespace DefaultNamespace
 {
     public interface moveAbility
     {

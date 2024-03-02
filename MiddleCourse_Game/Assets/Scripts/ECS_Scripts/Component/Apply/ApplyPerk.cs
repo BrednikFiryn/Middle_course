@@ -1,4 +1,4 @@
-using Assets.ECS_2.interfaces;
+using DefaultNamespace;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
@@ -25,9 +25,7 @@ public class ApplyPerk : MonoBehaviour, IAbilityTarget
     {
         foreach (var target in targets)
         {
-            var health = target.GetComponent<PlayerStats>();
-
-            if (target != null && target.GetComponent<MoveAbility>() && gameObject.GetComponent<ApplyPerk>())
+            if (target != null && !target.GetComponent<ApplyDamage>() && target.GetComponent<MoveAbility>())
             {
                 perk = true;
                 image.fillAmount = 1;

@@ -21,7 +21,6 @@ public class PlayerStats : MonoBehaviour
             // Загрузка значения здоровья из объекта PlayerData.
             _health = playerData.health;
         }
-
         else return;
     }
 
@@ -56,6 +55,12 @@ public class PlayerStats : MonoBehaviour
     public void Healing(float health)
     {
         _health += health;
+    }
+
+    public void EntityDestroy()
+    {
+        var entityManager = Unity.Entities.World.DefaultGameObjectInjectionWorld.EntityManager;
+        entityManager.DestroyEntity(entityManager.UniversalQuery);
     }
 }
 

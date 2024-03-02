@@ -6,12 +6,13 @@ public class MoveBehaviour : MonoBehaviour, IBehaviour
 {
     private MoveAbility _enemyTarget;
     private NavMeshAgent _agent;
+    public float speed;
 
     private void Awake()
     {
-        gameObject.AddComponent<NavMeshAgent>();
         _agent = GetComponent<NavMeshAgent>();
         _enemyTarget = FindObjectOfType<MoveAbility>();
+        _agent.speed = speed;
     }
 
     public float Evaluate()
@@ -25,7 +26,6 @@ public class MoveBehaviour : MonoBehaviour, IBehaviour
         {
             TargetOfEnemyAttack();
         }
-
         else return;
     }
 
