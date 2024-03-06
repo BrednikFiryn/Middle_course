@@ -2,5 +2,5 @@ using UnityEngine;
 
 public class BindBullet : MonoBehaviour
 {
-    public GameObject bullet;
+    public GameObject[] bullets;
 }

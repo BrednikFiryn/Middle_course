@@ -23,7 +23,6 @@ public class ApplyCollisionWall : MonoBehaviour, IAbilityTarget
                     gameObject.SetActive(false);
                     gameObject.transform.position = new Vector3(0, -15, 0);
                 }
-
                 //Если компонент applyPerk активен, текущему объекту (пуле) прикладывается сила в случайном направлении в заданном диапазоне углов.
                 if (applyPerk.perk)
                 {            
@@ -33,7 +32,6 @@ public class ApplyCollisionWall : MonoBehaviour, IAbilityTarget
                     rb.AddForce(randomDirection * powerBounce, ForceMode.Impulse);
                 }
             }
-
             else return;
         }
     }

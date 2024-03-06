@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Assets.ECS_2.interfaces;
 using Unity.Entities;
 using UnityEngine;
 using Unity.Mathematics;

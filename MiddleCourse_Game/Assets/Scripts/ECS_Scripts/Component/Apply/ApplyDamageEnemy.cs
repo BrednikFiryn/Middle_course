@@ -11,14 +11,12 @@ public class ApplyDamageEnemy : MonoBehaviour, IAbilityTarget
     {
         foreach (var target in targets)
         {
-
             if (target != null && target.GetComponent<ApplyDamage>() && gameObject.GetComponent<ApplyDamageEnemy>())
             {
                 target.transform.position = new Vector3(0, -10, 0);
                 target.SetActive(false);
                 Destroy(target.GetComponent<NavMeshAgent>());
             }
-
             else return;
         }
     }
