@@ -699,7 +699,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7352986793108109137}
   - component: {fileID: 6862135177205300308}
-  - component: {fileID: 8399446110833451533}
   - component: {fileID: 6116605520077615236}
   - component: {fileID: 5013712440174102931}
   - component: {fileID: 5352621197509784067}
@@ -707,6 +706,8 @@ GameObject:
   - component: {fileID: 3420010597066024629}
   - component: {fileID: 954017591}
   - component: {fileID: -2797883542930095412}
+  - component: {fileID: -4388388581671415761}
+  - component: {fileID: -4189246952091815911}
   m_Layer: 0
   m_Name: ZombWarrior
   m_TagString: Enemy
@@ -746,19 +747,6 @@ MonoBehaviour:
   _behaviours:
   - {fileID: 6116605520077615236}
   - {fileID: 5013712440174102931}
---- !u!114 &8399446110833451533
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7358525401580344823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 436b732fbcb6a9f41bd1231d32d250ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attack: 1
 --- !u!114 &6116605520077615236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -773,6 +761,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damage: 0.3
   _attackTime: 1
+  zombiAnimHash: 
 --- !u!114 &5013712440174102931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -785,7 +774,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc545631d77419e4d9358259079bcccc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  _speed: 3
+  zombiAnimHash: Walk
 --- !u!114 &5352621197509784067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -862,6 +852,40 @@ Rigidbody:
   m_Interpolate: 2
   m_Constraints: 112
   m_CollisionDetection: 1
+--- !u!114 &-4388388581671415761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7358525401580344823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 436b732fbcb6a9f41bd1231d32d250ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 1
+--- !u!95 &-4189246952091815911
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7358525401580344823}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c929656c07909194ab8a5cd79f5f371d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7358567002016454325
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,9 +5,12 @@ public class AttackMeleeBehaviour : MonoBehaviour, IBehaviour
 {
     [SerializeField] private float _damage;
     [SerializeField] private float _attackTime;
+    [SerializeField] private string zombiAnimHash;
     private HealthBar _healthBar;
     private ApplyDamage _applyDamage;
     private PlayerStats _playerStats;
+    private Animator _anim;
+
 
     private float _attackTimeMin = float.MinValue;
 
@@ -16,6 +19,8 @@ public class AttackMeleeBehaviour : MonoBehaviour, IBehaviour
         _healthBar = FindObjectOfType<HealthBar>();
         _applyDamage = FindObjectOfType<ApplyDamage>();
         _playerStats = FindObjectOfType<PlayerStats>();
+        _anim = GetComponent<Animator>();
+        
     }
 
     public float Evaluate()
@@ -38,7 +43,7 @@ public class AttackMeleeBehaviour : MonoBehaviour, IBehaviour
     }
 
     private void AttackMelee()
-    {
+    {  
         _playerStats.Damage(_damage);
         _healthBar.HealthCheck();
         _playerStats.SavePlayerData();

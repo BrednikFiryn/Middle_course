@@ -31,7 +31,7 @@ public class CharacterShootSystem : ComponentSystem
           (Entity entity, UserInputData input, ref ShootData shootData) =>
           {
               //Проверка, что действия стрельбы существует и является ли оно экземпляром класса IAbility.
-              if (input.ShootAction != null && input.ShootAction is IAbility ability)
+              if (input.shootAction != null && input.shootAction is IAbility ability)
               {
                   //Проверка, что значение ввода shoot > 0
                   if (shootData.shoot > 0f)

@@ -32,28 +32,17 @@ public class CharacterBoostSystem1 : ComponentSystem
           (Entity entity, UserInputData input, ref InputData inputData) =>
           {
               //Проверка, существует ли действие движения и является ли оно экземпляром класса moveAbility.
-              if (input.BoostAction is moveAbility ability)
+              if (input.boostAction is moveAbility ability)
               {
 
                   //Создание вектора направления на основе данных ввода о движении.
                   Vector3 direction = new Vector3(inputData.move.x, 0, inputData.move.y);
 
                   //Проверка что значение ввода boost > 0, действие ускорения не равно нулю, действия движения не равно нулю
-                  if (inputData.boost > 0f && input.BoostAction != null)
+                  if (inputData.boost > 0f && input.boostAction != null && direction.sqrMagnitude > 0.1f)
                   {
-
-                      //Проверка, является ли длина квадрата вектора направления менее 0.1.
-                      if (direction.sqrMagnitude < 0.1f)
-                      {
-                          //Вызов метода Stop() для остановки выполнения действия движения.
-                          ability.Stop();
-                          return;
-                      }
-
                       //значение ввода Speed = данные ввода speed / 5
                       inputData.Speed = input.speed / 5;
-                      //Вызов метода Execute() для выполнения действия ускорения.
-                      ability.Execute(); 
                   }           
 
                   //Если условие не выполняется то
@@ -61,26 +50,9 @@ public class CharacterBoostSystem1 : ComponentSystem
                   {
                       //значение ввода Speed = данные ввода speed / 10
                       inputData.Speed = input.speed / 10;
-                      //Вызов метода Stop() для остановки выполнения действия ускорения.
-                      ability.Stop();
                       return;
                   }        
               }   
           });
     }
 }
-
-/* 
-### Техническая документация:
-
-#### 1. Назначение:
-Этот код определяет систему для управления ускорения персонажа в игре на основе пользовательского ввода.
-
-#### 2. Ключевые особенности:
-- Система работает с сущностями, которые имеют компоненты InputData, UserInputData.
-- При каждом обновлении системы персонаж ускоряется в соответствии с данными ввода.
-- Для выполнения конкретных действий перемещения используется компонент UserInputData, который содержит ссылку на экземпляр интерфейса moveAbility.
-
-#### 3. Использование:
-Эта система может быть применена к сущностям, которые должны ускорять перемещение по миру игры на основе пользовательского ввода.
-*/

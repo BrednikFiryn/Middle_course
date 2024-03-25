@@ -9,16 +9,11 @@ public class PlayerStats : MonoBehaviour
     /// </summary>
     public void LoadPlayerData()
     {
-        // Путь к файлу JSON в системной папке приложения.
         string filePath = Application.persistentDataPath + "/player_data.json";
-        // Проверка существования файла JSON.
         if (System.IO.File.Exists(filePath))
         {
-            // Чтение содержимого файла JSON.
             string jsonData = System.IO.File.ReadAllText(filePath);
-            // Десериализация данных из JSON в объект PlayerData.
             PlayerData playerData = JsonUtility.FromJson<PlayerData>(jsonData);
-            // Загрузка значения здоровья из объекта PlayerData.
             _health = playerData.health;
         }
         else return;
@@ -29,15 +24,10 @@ public class PlayerStats : MonoBehaviour
     /// </summary>
     public void SavePlayerData()
     {
-        // Путь к файлу JSON в системной папке приложения.
         string filePath = Application.persistentDataPath + "/player_data.json";
-        // Создание нового объекта PlayerData с текущим значением здоровья.
         PlayerData playerData = new PlayerData(_health);
-        // Присваивание текущего значения здоровья объекту PlayerData.
         playerData.health = _health;
-        // Преобразование объекта PlayerData в JSON строку.
         string jsonData = JsonUtility.ToJson(playerData);
-        // Запись JSON строки в файл.
         System.IO.File.WriteAllText(filePath, jsonData);
     }
 
@@ -64,14 +54,10 @@ public class PlayerStats : MonoBehaviour
     }
 }
 
-//Атрибут, указывающий, что класс PlayerData может быть сериализован в JSON.
 [System.Serializable]
 public class PlayerData
 {
-    // Переменная, представляющая здоровье игрока.
     public float health;
-
-    // Конструктор класса PlayerData для установки начального значения здоровья.
     public PlayerData(float health)
     {
         this.health = health;

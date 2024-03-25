@@ -9,9 +9,13 @@ using UnityEngine;
 public class UserInputData : MonoBehaviour, IConvertGameObjectToEntity 
 {
      public float speed;
-     public MonoBehaviour ShootAction;
-     public MonoBehaviour MoveAction;
-     public MonoBehaviour BoostAction;
+     public string moveAnimHash;
+     public string moveSpeedAnimHash;
+     public string boostAnimHash;
+     public MonoBehaviour shootAction;
+     public MonoBehaviour rotationAction;
+     public MonoBehaviour moveAction;
+     public MonoBehaviour boostAction;
 
     /// <summary>
     /// Метод, который вызывается при преобразовании объекта в сущность. Он добавляет компоненты данных в сущность на основе параметров объекта и его действий.
@@ -23,14 +27,19 @@ public class UserInputData : MonoBehaviour, IConvertGameObjectToEntity
     public void Convert(Entity entity, EntityManager dstManager,
         GameObjectConversionSystem conversionSystem)
     {
-        // AddComponentData: Добавляет компоненты данных в сущность, такие как InputData, ShootData и InterfaceData.
+        // AddComponentData: Добавляет компоненты данных в сущность, такие как InputData, ShootData.
         dstManager.AddComponentData(entity, new InputData());
 
         // Проверяет, заполнена ли переменная ShootAction и является ли она наследником интерфейса IAbility,
         // и, если это так, добавляет компонент ShootData.
-        if (ShootAction != null && ShootAction is IAbility)
+        if (shootAction != null && shootAction is IAbility)
         {
             dstManager.AddComponentData(entity, new ShootData());
+        }
+
+        if (moveAnimHash != string.Empty)
+        {
+            dstManager.AddComponentData(entity, new AnimData());
         }
     }
 }
@@ -41,6 +50,7 @@ public class UserInputData : MonoBehaviour, IConvertGameObjectToEntity
 public struct InputData : IComponentData
 {
     public float2 move;
+    public float2 rotation;
     public float boost;
     public float Speed;
 }
@@ -53,17 +63,10 @@ public struct ShootData : IComponentData
     public float shoot;
 }
 
-/* 
-### Техническая документация:
+/// <summary>
+/// Представляет данные, связанные с анимацией.
+/// </summary>
+public struct AnimData : IComponentData
+{
 
-#### 1. Назначение:
-Этот код определяет класс UserInputData, который используется для управления вводом и хранения данных игрового объекта.
-
-#### 2. Ключевые особенности:
-- Переменные speed и boost определяют основные характеристики объекта.
-- Convert метод используется для преобразования объекта в сущность Unity и добавления соответствующих компонент данных.
-- InputData, ShootData и InterfaceData определяют структуры данных для хранения важной информации.
-
-#### 3. Использование:
-Этот класс может быть применен к игровым объектам, чтобы управлять их поведением на основе пользовательского ввода и других параметров.
-*/
+}

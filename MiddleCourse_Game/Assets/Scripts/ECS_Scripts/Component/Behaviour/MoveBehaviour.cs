@@ -4,15 +4,18 @@ using UnityEngine.AI;
 
 public class MoveBehaviour : MonoBehaviour, IBehaviour
 {
+    [SerializeField] private float _speed;
+    [SerializeField] private string zombiAnimHash;
     private MoveAbility _enemyTarget;
-    private NavMeshAgent _agent;
-    public float speed;
+    private Animator _anim;
+    private NavMeshAgent _agent;  
 
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
         _enemyTarget = FindObjectOfType<MoveAbility>();
-        _agent.speed = speed;
+        _agent.speed = _speed;
+        _anim = GetComponent<Animator>();
     }
 
     public float Evaluate()

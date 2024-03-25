@@ -32,21 +32,13 @@ public class CharacterMoveSystem : ComponentSystem
           (Entity entity, ref InputData inputData, UserInputData input, Transform transform) =>
           {
               //Проверка, существует ли действие движения и является ли оно экземпляром класса moveAbility.
-              if (input.MoveAction != null && input.MoveAction is moveAbility ability)
+              if (input.moveAction != null && input.moveAction is moveAbility ability)
               {
                   //Создание вектора направления на основе данных ввода о движении.
                   Vector3 direction = new Vector3(inputData.move.x, 0, inputData.move.y);
 
                   //Проверка, является ли длина квадрата вектора направления менее 0.1.
-                  if (direction.sqrMagnitude < 0.1f)
-                  {
-                      //Вызов метода Stop() для остановки выполнения действия движения.
-                      ability.Stop();
-                      return;
-                  }
-
-                  //Вызов метода Execute() для выполнения действия движения.
-                  else ability.Execute();
+                  if (direction.sqrMagnitude < 0.1f) return;
 
                   //Создание ссылки playerTransform на компонент Transform сущности.
                   ref var playerTransform = ref transform;
@@ -54,24 +46,15 @@ public class CharacterMoveSystem : ComponentSystem
                   ref var speed = ref inputData.Speed;
                   //Обновление позиции игрового объекта с учетом направления и скорости движения.
                   playerTransform.position += direction * speed;
-                  //Установка поворота игрового объекта в направлении движения.
-                  playerTransform.rotation = Quaternion.LookRotation(direction.normalized, Vector3.up);
+
+                  ////Установка поворота игрового объекта в направлении движения.
+                  //playerTransform.rotation = Quaternion.LookRotation(direction.normalized, Vector3.up);
+
+                  var rot = transform.rotation;
+                  var newRot = Quaternion.LookRotation(Vector3.Normalize(direction));
+                  if (newRot == rot) return;
+                  transform.rotation = Quaternion.Lerp(rot, newRot, Time.DeltaTime * 10);
               }
           });
     }
 }
-
-/* 
-### Техническая документация:
-
-#### 1. Назначение:
-Этот код определяет систему для управления перемещением персонажа в игре на основе пользовательского ввода.
-
-#### 2. Ключевые особенности:
-- Система работает с сущностями, которые имеют компоненты InputData, Transform и UserInputData.
-- При каждом обновлении системы персонаж перемещается в соответствии с данными ввода.
-- Для выполнения конкретных действий перемещения используется компонент UserInputData, который содержит ссылку на экземпляр интерфейса moveAbility.
-
-#### 3. Использование:
-Эта система может быть применена к сущностям, которые должны перемещаться по миру игры на основе пользовательского ввода.
-*/
