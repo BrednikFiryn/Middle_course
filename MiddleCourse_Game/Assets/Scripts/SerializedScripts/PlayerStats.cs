@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Threading.Tasks;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -7,12 +8,12 @@ public class PlayerStats : MonoBehaviour
     /// <summary>
     /// Метод для загрузки данных игрока из файла JSON.
     /// </summary>
-    public void LoadPlayerData()
+    public async void LoadPlayerData()
     {
         string filePath = Application.persistentDataPath + "/player_data.json";
         if (System.IO.File.Exists(filePath))
         {
-            string jsonData = System.IO.File.ReadAllText(filePath);
+            string jsonData = await System.IO.File.ReadAllTextAsync(filePath);
             PlayerData playerData = JsonUtility.FromJson<PlayerData>(jsonData);
             _health = playerData.health;
         }
@@ -22,13 +23,13 @@ public class PlayerStats : MonoBehaviour
     /// <summary>
     ///  Метод для сохранения данных игрока в файл JSON.
     /// </summary>
-    public void SavePlayerData()
+    public async void SavePlayerData()
     {
         string filePath = Application.persistentDataPath + "/player_data.json";
         PlayerData playerData = new PlayerData(_health);
         playerData.health = _health;
         string jsonData = JsonUtility.ToJson(playerData);
-        System.IO.File.WriteAllText(filePath, jsonData);
+        await System.IO.File.WriteAllTextAsync(filePath, jsonData);
     }
 
     public void Damage(float damage)
