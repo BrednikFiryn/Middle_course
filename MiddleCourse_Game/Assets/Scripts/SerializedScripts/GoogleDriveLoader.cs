@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 using UniRx;
-using System;
 
 public class GoogleDriveLoader : MonoBehaviour
 {
@@ -35,7 +34,7 @@ public class GoogleDriveLoader : MonoBehaviour
         _blockTrap.KillTrap();
         var entityManager = Unity.Entities.World.DefaultGameObjectInjectionWorld.EntityManager;
         entityManager.DestroyEntity(entityManager.UniversalQuery);
-        SceneManager.LoadScene(index);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(index);
     }
 }
 
