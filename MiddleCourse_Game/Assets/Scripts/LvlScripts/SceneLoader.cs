@@ -1,10 +1,23 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-   public void Loader(int index)
+   [SerializeField] private int index;
+
+    public void LoadSceneGame()
     {
-        SceneManager.LoadScene(index);
+        StartCoroutine(LoadSceneCoroutine());
+    }
+
+    private IEnumerator LoadSceneCoroutine()
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(index);
+        
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
     }
 }

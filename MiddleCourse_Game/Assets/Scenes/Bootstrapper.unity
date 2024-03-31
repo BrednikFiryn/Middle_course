@@ -795,8 +795,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1736696359}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: Loader
-        m_Mode: 3
+        m_MethodName: LoadSceneGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -817,3 +817,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cac3118dfc422842a8056e3da6ac291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  index: 1
