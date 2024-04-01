@@ -20,8 +20,8 @@ public class PlayerStats : MonoBehaviour
             if (!string.IsNullOrEmpty(jsonData))
             {
                 PlayerData playerData = JsonUtility.FromJson<PlayerData>(jsonData);
-                healthHero = playerData.health;
                 settingsWarrior.health = playerData.health;
+                healthHero = playerData.health;
             }
             else
             {
