@@ -1,50 +1,64 @@
+п»їusing System.Threading.Tasks;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public float _health;
+    [SerializeField] private SettingsWarrior settingsWarrior;
+    public float healthHero;
 
-    /// <summary>
-    /// Метод для загрузки данных игрока из файла JSON.
-    /// </summary>
-    public async void LoadPlayerData()
+    private async void Awake()
+    {
+        await LoadPlayerData();
+    }
+
+    public async Task LoadPlayerData()
     {
         string filePath = Application.persistentDataPath + "/player_data.json";
         if (System.IO.File.Exists(filePath))
         {
             string jsonData = await System.IO.File.ReadAllTextAsync(filePath);
-            PlayerData playerData = JsonUtility.FromJson<PlayerData>(jsonData);
-            _health = playerData.health;
+            if (!string.IsNullOrEmpty(jsonData))
+            {
+                PlayerData playerData = JsonUtility.FromJson<PlayerData>(jsonData);
+                healthHero = playerData.health;
+                settingsWarrior.health = playerData.health;
+            }
+            else
+            {
+                Debug.LogError("РћС€РёР±РєР° Р·Р°РіСЂСѓР·РєРё РґР°РЅРЅС‹С…: JSON-СЃС‚СЂРѕРєР° РїСѓСЃС‚Р° РёР»Рё РЅРµРґРѕРїСѓСЃС‚РёРјР°.");
+            }
         }
-        else return;
+        else
+        {
+            Debug.LogError("РћС€РёР±РєР° Р·Р°РіСЂСѓР·РєРё РґР°РЅРЅС‹С…: С„Р°Р№Р» РЅРµ РЅР°Р№РґРµРЅ.");
+        }
     }
 
-    /// <summary>
-    ///  Метод для сохранения данных игрока в файл JSON.
-    /// </summary>
     public async void SavePlayerData()
     {
         string filePath = Application.persistentDataPath + "/player_data.json";
-        PlayerData playerData = new PlayerData(_health);
-        playerData.health = _health;
+        PlayerData playerData = new PlayerData(healthHero);
+        playerData.health = settingsWarrior.health;
+        healthHero = settingsWarrior.health;
+
         string jsonData = JsonUtility.ToJson(playerData);
         await System.IO.File.WriteAllTextAsync(filePath, jsonData);
     }
 
     public void Damage(float damage)
     {
-        _health -= damage;
+        settingsWarrior.health -= damage;
 
-        if (damage >= _health)
+        if (damage >= settingsWarrior.health)
         {
-            _health = 0;
+            settingsWarrior.health = 0;
         }
         else return;
     }
 
     public void Healing(float health)
     {
-        _health += health;
+        settingsWarrior.health += health;
     }
 
     public void EntityDestroy()

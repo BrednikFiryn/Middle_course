@@ -11,11 +11,11 @@ public class ApplyDamage : MonoBehaviour, IAbilityTarget
     {
         foreach (var target in targets)
         {
-            var health = target.GetComponent<PlayerStats>();
+            var health = target.GetComponent<HealthBar>();
 
             if (target != null && health != null && gameObject.GetComponent<ApplyDamage>())
             {
-                if (health._health > 0f)
+                if (health.health > 0f)
                 {
                     attack = true;
                 }

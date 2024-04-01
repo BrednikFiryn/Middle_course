@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -5,6 +6,7 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 {
     [SerializeField] private string _deathAnimHash;
+    [SerializeField] private SettingsWarrior settingsWarrior;
     private GameObject _healthBar;
     private PlayerStats _playerStats;
     private Image _healthCount;
@@ -19,7 +21,6 @@ public class HealthBar : MonoBehaviour
             _health = value;
             if (_health <= 0)
             {
-                _animDeath.SetBool(_deathAnimHash, true);
                 _health = 0;
                 _playerStats.EntityDestroy();
             }
@@ -27,27 +28,38 @@ public class HealthBar : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        HealthCheck();
+
+        if (settingsWarrior.health <= 0)
+        {
+            _animDeath.SetBool(_deathAnimHash, true);
+        }
+
+    }
+
     private void Start()
     {
+        _playerStats = FindObjectOfType<PlayerStats>();
         _animDeath = GetComponent<Animator>();
         HealthStatus();
-        HealthCheck();
+        health = settingsWarrior.health;
     }
 
     public void HealthCheck()
     {
-         health = _playerStats._health;
+         health = settingsWarrior.health;
         _healthCount.fillAmount = health;
     }
 
     private void HealthStatus()
     {
-        _playerStats = FindObjectOfType<PlayerStats>();
         _healthBar = GameObject.FindGameObjectWithTag("Health");
         _healthCount = _healthBar.GetComponent<Image>();
-        _playerStats.LoadPlayerData();
     }
 }
+
 
 
 

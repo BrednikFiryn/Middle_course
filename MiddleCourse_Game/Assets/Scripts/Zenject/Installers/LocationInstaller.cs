@@ -3,25 +3,45 @@ using Zenject;
 
 namespace ZenjectName
 {
-    public partial class LocationInstaller : MonoInstaller/*, IInitializable*/
+    public partial class LocationInstaller : MonoInstaller, IStatsHero
     {
-       [SerializeField] private Transform _startPoint;
-       [SerializeField] private GameObject _heroPrefab;
-       [SerializeField] private BindBullet _bindBullet;
-       //[SerializeField] private EnemyMarker[] _enemyMarker;
+       [SerializeField] private Transform startPoint;
+       [SerializeField] private BindBullet bindBullet;
+       [SerializeField] private SettingsWarrior flamethrower;
+       [SerializeField] private SettingsWarrior gunner;
 
         public override void InstallBindings()
         {
             BindInstallerInterfaces();
             BindBulletHero();
-            BindHero();
-            //BindEnemyFactory();
+
+            if (IStatsHero.activeHero)
+            {
+                BindFlamethrower();
+            }
+
+            else
+            {
+                BindGunner();
+            }
         }
 
-        private void BindHero()
+        private void BindFlamethrower()
         {
             MoveAbility _moveAbility = Container
-                .InstantiatePrefabForComponent<MoveAbility>(_heroPrefab, _startPoint.position, Quaternion.identity, null);
+          .InstantiatePrefabForComponent<MoveAbility>(flamethrower.hero, startPoint.position, Quaternion.identity, null);
+
+            Container
+                .Bind<MoveAbility>()
+                .FromInstance(_moveAbility)
+                .AsSingle()
+                .NonLazy();
+        }
+
+        private void BindGunner()
+        {
+            MoveAbility _moveAbility = Container
+          .InstantiatePrefabForComponent<MoveAbility>(gunner.hero, startPoint.position, Quaternion.identity, null);
 
             Container
                 .Bind<MoveAbility>()
@@ -33,7 +53,7 @@ namespace ZenjectName
         private void BindBulletHero()
         {
             Container
-                .Bind<BindBullet>().FromInstance(_bindBullet)
+                .Bind<BindBullet>().FromInstance(bindBullet)
                 .AsSingle()
                 .NonLazy();
         }

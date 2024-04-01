@@ -32,8 +32,6 @@ public class ApplyDamageTrap : MonoBehaviour, IAbilityTarget
 
     private void DamageTrap()
     {
-        Debug.Log("Error health stats");
-
         _playerStats.Damage(_damage);
         _healthBar.HealthCheck();
         _playerStats.SavePlayerData();

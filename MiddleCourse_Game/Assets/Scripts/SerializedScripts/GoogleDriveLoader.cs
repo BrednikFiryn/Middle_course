@@ -9,7 +9,7 @@ public class GoogleDriveLoader : MonoBehaviour
     [SerializeField] private int index;
     [SerializeField] private BlockTrap _blockTrap;
 
-    private string _googleDriveUrl = "https://drive.google.com/file/d/1qRLxv_Lpy0-_m01KuqOtvtfv6_8dwa-z/view?usp=drive_link";
+    private string _googleDriveUrl = "https://drive.google.com/uc?export=download&id=1fJMNT3BMWyntPrd9jfgwROw0VwdAGrvS";
 
     public void SceneReload()
     {

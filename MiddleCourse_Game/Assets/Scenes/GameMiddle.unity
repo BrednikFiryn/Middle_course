@@ -8902,7 +8902,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.70090926, y: 0, z: 0, w: 0.71325046}
-  m_LocalPosition: {x: 0, y: 90, z: 0}
+  m_LocalPosition: {x: -0.8500534, y: 95.01, z: -2.6685832}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11367,8 +11367,8 @@ MonoBehaviour:
   _scriptableObjectInstallers:
   - {fileID: 11400000, guid: 72522bda2e013294d9c345abeb331f7f, type: 2}
   _monoInstallers:
-  - {fileID: 1330624991}
   - {fileID: 1330624992}
+  - {fileID: 1330624991}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -11413,9 +11413,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c52b1e896fca4446a1eee71b0b65430, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startPoint: {fileID: 6645622527655762200, guid: 5e4a6bf9297e3b244b7697e29518b0ee, type: 3}
-  _heroPrefab: {fileID: 4931130989775599727, guid: 3a20c21d4c3b3294387432444735da12, type: 3}
-  _bindBullet: {fileID: 160562016}
+  startPoint: {fileID: 6645622527655762200, guid: 5e4a6bf9297e3b244b7697e29518b0ee, type: 3}
+  bindBullet: {fileID: 160562016}
+  flamethrower: {fileID: 11400000, guid: 4eeb4f8f870a36f429a0ec888190e249, type: 2}
+  gunner: {fileID: 11400000, guid: 6e3749677a291ab4bbe28f07efeed86e, type: 2}
+  playerStatsFlamethrower: {fileID: 2785337227409879313, guid: 3a20c21d4c3b3294387432444735da12, type: 3}
+  playerStatsGunner: {fileID: -1415684978080900691, guid: 5421a13f50daaa74db24c8cc2aa34ad5, type: 3}
 --- !u!114 &1330624992
 MonoBehaviour:
   m_ObjectHideFlags: 0
