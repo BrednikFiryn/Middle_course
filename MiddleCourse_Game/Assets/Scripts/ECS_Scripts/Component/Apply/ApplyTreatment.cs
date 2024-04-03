@@ -26,6 +26,7 @@ public class ApplyTreatment : MonoBehaviour, IAbilityTarget
                 if (health.healthHero < 1f)
                 {
                     health.Healing(treatment);
+                    _healthBar.HealthCheck();
                     health.SavePlayerData();
                     gameObject.SetActive(false);
                     gameObject.transform.position = new Vector3(0, -15, 0);

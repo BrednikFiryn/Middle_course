@@ -5,23 +5,26 @@ using UnityEngine;
 [CustomEditor(typeof(SettingsWarrior))]
 public class SettingsInspector : Editor
 {
-    private SerializedProperty Health;
-    private bool setHealth;
+    private SerializedProperty _health;
+    private HealthBar _healthBar;
+    private bool _setHealth;
 
     private void OnEnable()
     {
-        Health = serializedObject.FindProperty("health");
+        _health = serializedObject.FindProperty("health");
     }
 
     public override void OnInspectorGUI()
     {
         serializedObject.Update();
-        EditorGUILayout.PropertyField(Health);
-        GUILayout.Label(Health.floatValue.ToString());
-        setHealth = GUILayout.Button("God's Treatment");
-        if (setHealth)
+        EditorGUILayout.PropertyField(_health);
+        GUILayout.Label(_health.floatValue.ToString());
+        _setHealth = GUILayout.Button("God's Treatment");
+        if (_setHealth)
         {
-            Health.floatValue = 1f;
+            _healthBar = FindObjectOfType<HealthBar>();
+            _health.floatValue = 1f;
+            _healthBar.HealthCheck();
         }
 
         serializedObject.ApplyModifiedProperties();

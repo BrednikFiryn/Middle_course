@@ -4,8 +4,8 @@ using UnityEngine;
 public class SettingsWindow : EditorWindow, IStatsHero
 {
     private string[] _heroSettingsList;
-    private bool _flamethrower;
-    private bool _gunner;
+    private bool _flamethrowerGame;
+    private bool _gunnerGame;
 
     [MenuItem("Window/Game Settings Window")]
     public static void ShowWindow()
@@ -24,19 +24,18 @@ public class SettingsWindow : EditorWindow, IStatsHero
             GUILayout.Label(AssetDatabase.GUIDToAssetPath(file), EditorStyles.label);
         }
 
-        _flamethrower = GUILayout.Button("Flamethrower");
-        _gunner = GUILayout.Button("Gunner");
-
-        if (_flamethrower)
+        _flamethrowerGame = GUILayout.Button("Activates the Flamethrower in the game");
+        _gunnerGame = GUILayout.Button("Activates the Gunner in the game");
+        if (_flamethrowerGame)
         {
             IStatsHero.activeHero = true;
-            Debug.Log(IStatsHero.activeHero);
+            Debug.Log("Activates the Flamethrower in the game");
         }
 
-        if (_gunner)
+        if (_gunnerGame)
         {
             IStatsHero.activeHero = false;
-            Debug.Log(IStatsHero.activeHero);
+            Debug.Log("Activates the Gunner in the game");
         }
     }
 }

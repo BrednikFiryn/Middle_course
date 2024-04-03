@@ -15,9 +15,10 @@ public class ApplyDamage : MonoBehaviour, IAbilityTarget
 
             if (target != null && health != null && gameObject.GetComponent<ApplyDamage>())
             {
-                if (health.health > 0f)
+                if (health._health > 0f)
                 {
                     attack = true;
+                    health.HealthCheck();
                 }
 
                 else attack = false;                  

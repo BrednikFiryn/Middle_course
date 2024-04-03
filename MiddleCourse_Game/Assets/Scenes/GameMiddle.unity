@@ -8836,6 +8836,7 @@ GameObject:
   - component: {fileID: 963194226}
   - component: {fileID: 963194230}
   - component: {fileID: 963194231}
+  - component: {fileID: 963194232}
   m_Layer: 31
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -8976,6 +8977,19 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &963194232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15db208cde1cba64bad8bbbeb3d5712c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeHero: 0
 --- !u!1 &966886632
 GameObject:
   m_ObjectHideFlags: 0
@@ -11414,11 +11428,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPoint: {fileID: 6645622527655762200, guid: 5e4a6bf9297e3b244b7697e29518b0ee, type: 3}
+  _activeHero: {fileID: 963194232}
   bindBullet: {fileID: 160562016}
   flamethrower: {fileID: 11400000, guid: 4eeb4f8f870a36f429a0ec888190e249, type: 2}
   gunner: {fileID: 11400000, guid: 6e3749677a291ab4bbe28f07efeed86e, type: 2}
-  playerStatsFlamethrower: {fileID: 2785337227409879313, guid: 3a20c21d4c3b3294387432444735da12, type: 3}
-  playerStatsGunner: {fileID: -1415684978080900691, guid: 5421a13f50daaa74db24c8cc2aa34ad5, type: 3}
 --- !u!114 &1330624992
 MonoBehaviour:
   m_ObjectHideFlags: 0
