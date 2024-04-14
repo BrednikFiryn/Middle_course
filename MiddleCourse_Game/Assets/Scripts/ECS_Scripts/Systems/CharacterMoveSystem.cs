@@ -14,7 +14,7 @@ public class CharacterMoveSystem : ComponentSystem
     /// Вызывается при создании системы и устанавливает запрос для получения сущностей.
     /// </summary>
     protected override void OnCreate()
-    {
+    {      
         // Инициализация переменной moveQuery запросом сущностей, содержащих компоненты InputData, Transform и UserInputData.
         moveQuery = GetEntityQuery(ComponentType.ReadOnly<InputData>(),
             ComponentType.ReadOnly<Transform>(), ComponentType.ReadOnly<UserInputData>());
@@ -32,7 +32,7 @@ public class CharacterMoveSystem : ComponentSystem
           (Entity entity, ref InputData inputData, UserInputData input, Transform transform) =>
           {
               //Проверка, существует ли действие движения и является ли оно экземпляром класса moveAbility.
-              if (input.moveAction != null && input.moveAction is moveAbility ability)
+              if (input.moveAction != null  && input.moveAction is moveAbility ability)
               {
                   //Создание вектора направления на основе данных ввода о движении.
                   Vector3 direction = new Vector3(inputData.move.x, 0, inputData.move.y);

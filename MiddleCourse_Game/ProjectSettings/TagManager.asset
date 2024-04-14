@@ -10,6 +10,7 @@ TagManager:
   - Wall
   - Health
   - Rebound
+  - ItemPanel
   layers:
   - Default
   - TransparentFX

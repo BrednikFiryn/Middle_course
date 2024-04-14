@@ -20,6 +20,7 @@ public class SettingsInspector : Editor
         EditorGUILayout.PropertyField(_health);
         GUILayout.Label(_health.floatValue.ToString());
         _setHealth = GUILayout.Button("God's Treatment");
+
         if (_setHealth)
         {
             _healthBar = FindObjectOfType<HealthBar>();

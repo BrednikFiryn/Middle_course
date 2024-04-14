@@ -2251,6 +2251,8 @@ GameObject:
   - component: {fileID: 4931130989392976832}
   - component: {fileID: 4931130989392976833}
   - component: {fileID: 2785337227409879313}
+  - component: {fileID: 3539289472131452997}
+  - component: {fileID: -1092967971481775440}
   m_Layer: 0
   m_Name: Flamethrower
   m_TagString: Player
@@ -2405,6 +2407,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _deathAnimHash: Death
   settingsWarrior: {fileID: 11400000, guid: 4eeb4f8f870a36f429a0ec888190e249, type: 2}
+  _health: 0
 --- !u!114 &2785337227409879313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2419,6 +2422,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settingsWarrior: {fileID: 11400000, guid: 4eeb4f8f870a36f429a0ec888190e249, type: 2}
   healthHero: 0
+--- !u!114 &3539289472131452997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4931130989775599727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 087991739cdaa9240856367ee120204f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreToNextLevel: 20
+  currentLevel: 1
+  score: 0
+  levelUpActions:
+  - {fileID: -1092967971481775440}
+--- !u!114 &-1092967971481775440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4931130989775599727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6566eac05c36c444abea216082ecd4bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4931130989775599729
 GameObject:
   m_ObjectHideFlags: 0

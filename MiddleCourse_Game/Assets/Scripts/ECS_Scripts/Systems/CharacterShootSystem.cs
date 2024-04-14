@@ -1,5 +1,6 @@
 using DefaultNamespace;
 using Unity.Entities;
+using UnityEngine;
 
 /// <summary>
 /// Класс наследует от ComponentSystem, что позволяет ему обрабатывать сущности Unity в системной манере.

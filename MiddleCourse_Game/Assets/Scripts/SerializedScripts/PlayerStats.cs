@@ -56,11 +56,6 @@ public class PlayerStats : MonoBehaviour
         else return;
     }
 
-    public void Healing(float health)
-    {
-        settingsWarrior.health += health;
-    }
-
     public void EntityDestroy()
     {
         var entityManager = Unity.Entities.World.DefaultGameObjectInjectionWorld.EntityManager;

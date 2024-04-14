@@ -1,33 +1,27 @@
-using DefaultNamespace;
 using UnityEngine;
-using System.Collections.Generic;
 
-public class ApplyDamage : MonoBehaviour, IAbilityTarget
+public class ApplyDamage : MonoBehaviour
 {
-    public bool attack = true;
-    public List<GameObject> targets { get; set; }
+    public bool attack;
 
-    public void Execute()
+    private void Start()
     {
-        foreach (var target in targets)
+       attack = false;
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
         {
-            var health = target.GetComponent<HealthBar>();
-
-            if (target != null && health != null && gameObject.GetComponent<ApplyDamage>())
-            {
-                if (health._health > 0f)
-                {
-                    attack = true;
-                    health.HealthCheck();
-                }
-
-                else attack = false;                  
-            }
+            attack = true;
         }
     }
 
-    public void Stop()
+    private void OnCollisionExit(Collision collision)
     {
-
+        if (collision.gameObject.tag == "Player")
+        {
+            attack = false;
+        }
     }
 }

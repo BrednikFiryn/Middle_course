@@ -1,4 +1,5 @@
 
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,7 @@ public class HealthBar : MonoBehaviour
     private PlayerStats _playerStats;
     private Image _healthCount;
     private Animator _animDeath;
+    private ViewModel _viewModel;
     public float _health;
 
     private void Start()
@@ -18,7 +20,9 @@ public class HealthBar : MonoBehaviour
 
         _playerStats = FindObjectOfType<PlayerStats>();
         _animDeath = GetComponent<Animator>();
+        _viewModel = FindObjectOfType<ViewModel>();
         HealthStatus();
+        Invoke("HealthCheck", 1);
     }
 
     private void HealthStatus()
@@ -32,15 +36,25 @@ public class HealthBar : MonoBehaviour
         _health = settingsWarrior.health;
         _healthCount.fillAmount = _health;
 
+        if (_viewModel != null) _viewModel.Health = Math.Truncate(_health * 100).ToString();
+
         if (_health <= 0)
         {
             _health = 0;
             _animDeath.SetBool(_deathAnimHash, true);
-            _playerStats.EntityDestroy();
+            _playerStats.EntityDestroy();         
         }
         else if (_health > 1) _health = 1;
     }
+
+    public void Healing(float health)
+    {
+        settingsWarrior.health += health;
+        if (settingsWarrior.health > 1) settingsWarrior.health = 1;
+    }
+
 }
+
 
 
 

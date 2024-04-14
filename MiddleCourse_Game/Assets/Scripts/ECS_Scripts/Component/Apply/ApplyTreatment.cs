@@ -1,44 +1,19 @@
-using DefaultNamespace;
 using UnityEngine;
-using System.Collections.Generic;
 
-public class ApplyTreatment : MonoBehaviour, IAbilityTarget
+public class ApplyTreatment : MonoBehaviour, ICraftable
 {
     [SerializeField] private float treatment;
-    private HealthBar _healthBar;
-    public List<GameObject> targets { get; set; }
+    public string name = "";
 
-    private void Start()
-    {
-        _healthBar = FindObjectOfType<HealthBar>();
-    }
+    public string Name => name;
 
     public void Execute()
     {
-        if (_healthBar == null) return;
+            var character = FindObjectOfType<HealthBar>();
+            if (character == null) return;
+            character.Healing(treatment);
+            character.HealthCheck();
 
-        foreach (var target in targets)
-        {
-            var health = target.GetComponent<PlayerStats>();
-
-            if (target != null && !target.GetComponent<ApplyDamage>() && target.GetComponent<MoveAbility>())
-            {
-                if (health.healthHero < 1f)
-                {
-                    health.Healing(treatment);
-                    _healthBar.HealthCheck();
-                    health.SavePlayerData();
-                    gameObject.SetActive(false);
-                    gameObject.transform.position = new Vector3(0, -15, 0);
-                }
-
-                else return;
-            }
-        }
-    }
-
-    public void Stop()
-    {
-
+            Destroy(this.gameObject);
     }
 }

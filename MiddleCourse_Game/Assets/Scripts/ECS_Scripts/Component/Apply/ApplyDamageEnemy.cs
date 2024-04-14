@@ -6,6 +6,12 @@ using UnityEngine.AI;
 public class ApplyDamageEnemy : MonoBehaviour, IAbilityTarget
 {
     public List<GameObject> targets { get; set; }
+    private CharacterData _characterData;
+
+    private void Start()
+    {
+        _characterData = FindObjectOfType<CharacterData>();
+    }
 
     public void Execute()
     {
@@ -16,6 +22,7 @@ public class ApplyDamageEnemy : MonoBehaviour, IAbilityTarget
                 target.transform.position = new Vector3(0, -10, 0);
                 target.SetActive(false);
                 Destroy(target.GetComponent<NavMeshAgent>());
+                _characterData.Score(10);
             }
             else return;
         }

@@ -26,6 +26,7 @@ public class SettingsWindow : EditorWindow, IStatsHero
 
         _flamethrowerGame = GUILayout.Button("Activates the Flamethrower in the game");
         _gunnerGame = GUILayout.Button("Activates the Gunner in the game");
+
         if (_flamethrowerGame)
         {
             IStatsHero.activeHero = true;

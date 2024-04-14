@@ -14,6 +14,7 @@ public class SceneLoader : MonoBehaviour
     private IEnumerator LoadSceneCoroutine()
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(index);
+        Cursor.lockState = CursorLockMode.Locked;
         
         while (!asyncLoad.isDone)
         {

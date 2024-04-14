@@ -1,5 +1,5 @@
 using DefaultNamespace;
-using System;using UnityEngine;
+using UnityEngine;
 using Zenject;
 
 public class ShootAbility : MonoBehaviour, IAbility

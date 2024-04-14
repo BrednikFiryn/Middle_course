@@ -13,6 +13,7 @@ public class GoogleDriveLoader : MonoBehaviour
 
     public void SceneReload()
     {
+        Cursor.lockState = CursorLockMode.Locked;
        Observable.FromCoroutine(_ => DriverLoader())
             .Subscribe(_ => Debug.Log("Загрузка завершена"),
             ex => Debug.LogError($"Ошибка: {ex.Message}"));
