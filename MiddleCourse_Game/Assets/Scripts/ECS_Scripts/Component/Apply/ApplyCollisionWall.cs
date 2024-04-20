@@ -12,7 +12,6 @@ public class ApplyCollisionWall : MonoBehaviour, IAbilityTarget
         {
             if (target != null && target.CompareTag("Wall"))
             {
-
                 gameObject.SetActive(false);
                 gameObject.transform.position = new Vector3(0, -15, 0);
             }

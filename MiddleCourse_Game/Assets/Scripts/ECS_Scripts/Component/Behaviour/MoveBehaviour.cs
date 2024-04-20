@@ -6,14 +6,13 @@ public class MoveBehaviour : MonoBehaviour, IBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private string zombiAnimHash;
-    [SerializeField] float zoneAgression;
+    [SerializeField] private float zoneAgression;
     [SerializeField] private float damageModifier;
     [SerializeField] private float attackTime;
     private HealthBar _healthBar;
     private ApplyDamage _applyDamage;
     private PlayerStats _playerStats;
     private MoveAbility _enemyTarget;
-    private Animator _anim;
     private NavMeshAgent _agent;
     private float _attackTimeMin = float.MinValue;
 
@@ -24,7 +23,6 @@ public class MoveBehaviour : MonoBehaviour, IBehaviour
         _agent = GetComponent<NavMeshAgent>();
         _enemyTarget = FindObjectOfType<MoveAbility>();
         _agent.speed = speed;
-        _anim = GetComponent<Animator>();
     }
 
     private void Start()

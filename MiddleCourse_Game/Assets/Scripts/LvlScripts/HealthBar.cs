@@ -1,4 +1,3 @@
-
 using System;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,7 +12,7 @@ public class HealthBar : MonoBehaviour
     private Image _healthCount;
     private Animator _animDeath;
     private ViewModel _viewModel;
-    public float _health;
+    public float health;
 
     private void Start()
     {
@@ -33,18 +32,19 @@ public class HealthBar : MonoBehaviour
 
     public void HealthCheck()
     {
-        _health = settingsWarrior.health;
-        _healthCount.fillAmount = _health;
+        health = settingsWarrior.health;
+        _healthCount.fillAmount = health;
 
-        if (_viewModel != null) _viewModel.Health = Math.Truncate(_health * 100).ToString();
+        if (_viewModel != null) _viewModel.Health = 
+                Math.Truncate(health * 100).ToString() + $"/{settingsWarrior.maxHealth * 100}";
 
-        if (_health <= 0)
+        if (health <= 0)
         {
-            _health = 0;
+            health = 0;
             _animDeath.SetBool(_deathAnimHash, true);
             _playerStats.EntityDestroy();         
         }
-        else if (_health > 1) _health = 1;
+        else if (health > 1) health = 1;
     }
 
     public void Healing(float health)
@@ -52,7 +52,6 @@ public class HealthBar : MonoBehaviour
         settingsWarrior.health += health;
         if (settingsWarrior.health > 1) settingsWarrior.health = 1;
     }
-
 }
 
 

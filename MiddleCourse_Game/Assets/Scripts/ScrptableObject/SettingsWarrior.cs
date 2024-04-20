@@ -4,6 +4,7 @@ using UnityEngine;
 public class SettingsWarrior : ScriptableObject
 {
     public float health;
+    public float maxHealth;
     public float speed;
     public float damage;
 

@@ -1,4 +1,3 @@
-using DefaultNamespace;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
@@ -10,7 +9,6 @@ public class ApplyPerk : MonoBehaviour
 
     public void Execute()
     {
-       IItem.perk = true;
        gameObject.transform.position = new Vector3(0, -20, 0);
        StartCoroutine(EndPerkRoutine());
     }
@@ -23,7 +21,6 @@ public class ApplyPerk : MonoBehaviour
     private IEnumerator EndPerkRoutine()
     {
         yield return new WaitForSeconds(perkTime);
-        IItem.perk = false;
     }
 }
 
