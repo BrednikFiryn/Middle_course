@@ -1,11 +1,8 @@
 using UnityEngine;
 
-public class ApplyTreatment : MonoBehaviour, ICraftable
+public class ApplyTreatment : MonoBehaviour
 {
     [SerializeField] private float treatment;
-    public string name = "";
-
-    public string Name => name;
 
     public void Execute()
     {

@@ -776,8 +776,10 @@ MonoBehaviour:
   zombiAnimHash: Walk
   zoneAgression: 10
   damageModifier: 1
-  damage: 0
   attackTime: 3
+  agent: {fileID: 380643740944280001}
+  applyDamage: {fileID: -694685615873467302}
+  damage: 0
 --- !u!114 &5352621197509784067
 MonoBehaviour:
   m_ObjectHideFlags: 0

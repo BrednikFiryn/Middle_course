@@ -2405,9 +2405,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc5d48c75e5abf347abafe60381f35ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _deathAnimHash: Death
+  deathAnimHash: Death
   settingsWarrior: {fileID: 11400000, guid: 6e3749677a291ab4bbe28f07efeed86e, type: 2}
-  _health: 0
+  animDeath: {fileID: 4931130989392976842}
+  playerStats: {fileID: -1415684978080900691}
+  health: 0
 --- !u!114 &-1415684978080900691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2437,6 +2439,7 @@ MonoBehaviour:
   scoreToNextLevel: 20
   currentLevel: 1
   score: 0
+  InventoryUIRoot: {fileID: 0}
   levelUpActions:
   - {fileID: -8327405514265717274}
 --- !u!114 &-8327405514265717274

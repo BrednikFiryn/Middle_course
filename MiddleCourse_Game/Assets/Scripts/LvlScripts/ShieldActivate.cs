@@ -15,14 +15,6 @@ public class ShieldActivate : MonoBehaviour
         _shield.gameObject.SetActive(false);
     }
 
-    private void Update()
-    {   
-        if (_shieldCondition == true)
-        {
-            _shieldIamge.fillAmount -= 1.0f / _shieldDelay * Time.deltaTime;
-        }
-    }
-
     public void ButtonShieldActivate()
     {
         if (_shieldCondition == false)
@@ -35,6 +27,7 @@ public class ShieldActivate : MonoBehaviour
 
     private IEnumerator ShieldCoroutine()
     {
+        _shieldIamge.fillAmount -= 1.0f / _shieldDelay * Time.deltaTime;
         yield return new WaitForSeconds(_shieldDelay);
         _shield.gameObject.SetActive(false);
         _shieldCondition = false;

@@ -36,6 +36,7 @@ public class GoogleDriveLoader : MonoBehaviour
         var entityManager = Unity.Entities.World.DefaultGameObjectInjectionWorld.EntityManager;
         entityManager.DestroyEntity(entityManager.UniversalQuery);
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(index);
+        yield return asyncLoad;
     }
 }
 

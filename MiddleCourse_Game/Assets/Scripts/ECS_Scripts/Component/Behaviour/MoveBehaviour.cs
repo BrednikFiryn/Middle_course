@@ -1,4 +1,5 @@
 using Assets.ECS_2.interfaces;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -9,26 +10,20 @@ public class MoveBehaviour : MonoBehaviour, IBehaviour
     [SerializeField] private float zoneAgression;
     [SerializeField] private float damageModifier;
     [SerializeField] private float attackTime;
+    [SerializeField] private NavMeshAgent agent;
+    [SerializeField] private ApplyDamage applyDamage;
     private HealthBar _healthBar;
-    private ApplyDamage _applyDamage;
     private PlayerStats _playerStats;
     private MoveAbility _enemyTarget;
-    private NavMeshAgent _agent;
     private float _attackTimeMin = float.MinValue;
 
    [HideInInspector] public float damage;
 
-    private void Awake()
-    {
-        _agent = GetComponent<NavMeshAgent>();
-        _enemyTarget = FindObjectOfType<MoveAbility>();
-        _agent.speed = speed;
-    }
-
     private void Start()
     {
+        _enemyTarget = FindObjectOfType<MoveAbility>();
+        agent.speed = speed;
         _healthBar = FindObjectOfType<HealthBar>();
-        _applyDamage = GetComponent<ApplyDamage>();
         _playerStats = FindObjectOfType<PlayerStats>();
     }
 
@@ -39,15 +34,16 @@ public class MoveBehaviour : MonoBehaviour, IBehaviour
 
     public void Behave()
     {
-        if (_agent != null)
+        if (agent != null)
         {
             TargetOfEnemyAttack();
 
             if (Time.time < _attackTimeMin + attackTime) return;
 
-            if (_applyDamage.attack)
+            if (applyDamage.attack)
             {
-                AttackMelee();
+               AttackMelee();
+               Debug.Log($"Attack {gameObject.name}");
             }
         }
         else return;
@@ -55,16 +51,15 @@ public class MoveBehaviour : MonoBehaviour, IBehaviour
 
     public void TargetOfEnemyAttack()
     {
-        if (_agent != null && _enemyTarget != null)
+        if (agent != null && _enemyTarget != null)
         {
-            _agent.SetDestination(_enemyTarget.transform.position);
+            agent.SetDestination(_enemyTarget.transform.position);
         }
     }
 
     private void AttackMelee()
     {
         damage = IBehaviour.damage * damageModifier;
-        Debug.Log(damage);
         _playerStats.Damage(damage);
         _healthBar.HealthCheck();
         _attackTimeMin = Time.time;
