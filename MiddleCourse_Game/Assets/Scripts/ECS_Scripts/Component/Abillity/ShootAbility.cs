@@ -9,6 +9,7 @@ public class ShootAbility : MonoBehaviour, IAbility
     [SerializeField] private float _shootDelay;
     [SerializeField] private float _overheating;
     [SerializeField] private float _bulletSpeed = 100f;
+    [SerializeField] private AK.Wwise.Event shootEvent = null;
     private float _shootTime = float.MinValue;
     private float _shootDelayConst;
 
@@ -32,6 +33,7 @@ public class ShootAbility : MonoBehaviour, IAbility
         if (_bullet != null)
         {
             Shooting();
+            shootEvent.Post(this.gameObject);
 
             if (index < _bullet.Length) ++index;
             if (index == _bullet.Length)

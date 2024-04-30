@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="150">
+	<RootPaths>
+		<ProjectRoot>../..</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Mac</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{D326F752-7CA2-0A14-FDB1-63ECE89D0199}">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<Plugins>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="3803692087" Name="Master Audio Bus"/>
+			</Busses>
+		</SoundBank>
+		<SoundBank Id="2707175255" Type="User" Language="SFX" Hash="{8E54DBE3-FE59-3755-7081-72C212988117}">
+			<ShortName>Middle_CourseBanks</ShortName>
+			<Path>Middle_CourseBanks.bnk</Path>
+			<Media>
+				<File Id="305551583" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Shoot.wav</ShortName>
+					<CachePath>SFX/Shoot_818F3B66.wem</CachePath>
+				</File>
+				<File Id="377558400" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>ItemEguipt.wav</ShortName>
+					<CachePath>SFX/ItemEguipt_818F3B66.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="2147347314" Name="ItemEguipt" DurationType="OneShot" DurationMin="0.816" DurationMax="0.816">
+					<MediaRefs>
+						<MediaRef Id="377558400"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3038207054" Name="Shoot" DurationType="OneShot" DurationMin="0.9404082" DurationMax="0.9404082">
+					<MediaRefs>
+						<MediaRef Id="305551583"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{1233DFA9-5EE3-2C7E-3411-D893C6480165}</FileHash>
+</SoundBanksInfo>
