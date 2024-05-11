@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 4c7684ab54f672947b2bc3baffd29413, type: 3}
+    - {fileID: 2800000, guid: 404ac27c303a9bb4ea8f693fb961f30b, type: 3}
+    - {fileID: 2800000, guid: d8c819a42de43ae4bad7c4ca5d3f24c2, type: 3}
+    - {fileID: 2800000, guid: 9d01b1f013c3bc34a9cb42e1dfe77cab, type: 3}
+    - {fileID: 2800000, guid: aa9145792d4a80646851acad50fdc7cf, type: 3}
+    - {fileID: 2800000, guid: 86e074cce47d9844381f72b5bfb8b087, type: 3}
+    - {fileID: 2800000, guid: 6d6aadb0c12e49f48a1ab832230e2625, type: 3}
+    - {fileID: 2800000, guid: 432c7af643ad6f7479b8fa109433bb86, type: 3}
+    - {fileID: 2800000, guid: ccea563636645d642abadad7a496315b, type: 3}
+    - {fileID: 2800000, guid: 3813533e33c968444ab66649295a4e00, type: 3}
+    - {fileID: 2800000, guid: 993adfa6cc369954fa45b7eb0a209e91, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 6d6aadb0c12e49f48a1ab832230e2625, type: 3}
+  - {fileID: 21300000, guid: 9d01b1f013c3bc34a9cb42e1dfe77cab, type: 3}
+  - {fileID: 21300000, guid: d8c819a42de43ae4bad7c4ca5d3f24c2, type: 3}
+  - {fileID: 21300000, guid: ccea563636645d642abadad7a496315b, type: 3}
+  - {fileID: 21300000, guid: 993adfa6cc369954fa45b7eb0a209e91, type: 3}
+  - {fileID: 21300000, guid: 432c7af643ad6f7479b8fa109433bb86, type: 3}
+  - {fileID: 21300000, guid: aa9145792d4a80646851acad50fdc7cf, type: 3}
+  - {fileID: 21300000, guid: 4c7684ab54f672947b2bc3baffd29413, type: 3}
+  - {fileID: 21300000, guid: 404ac27c303a9bb4ea8f693fb961f30b, type: 3}
+  - {fileID: 21300000, guid: 86e074cce47d9844381f72b5bfb8b087, type: 3}
+  - {fileID: 21300000, guid: 3813533e33c968444ab66649295a4e00, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - KnobUI
+  - IconShieldButtonUI
+  - IconCraftUI
+  - StoreUI
+  - ChipPillsUI
+  - RestartUI
+  - IconShootButtonUI
+  - HealthPackUI
+  - HealthPillsUI
+  - JoystickUI
+  - ADsUI
+  m_RenderDataMap: {}
+  m_Tag: UI
+  m_IsVariant: 0

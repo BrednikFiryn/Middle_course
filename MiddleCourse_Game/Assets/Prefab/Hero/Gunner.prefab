@@ -20,7 +20,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2088267025
 Transform:
   m_ObjectHideFlags: 0
@@ -3160,8 +3160,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1517424140160653743}
   - component: {fileID: 1753927743188068846}
-  - component: {fileID: 1198613220}
-  - component: {fileID: 1198613219}
   m_Layer: 0
   m_Name: CM vcam1
   m_TagString: Untagged
@@ -3177,14 +3175,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8375117865418872236}
   m_LocalRotation: {x: 0.70090926, y: -0, z: -0, w: 0.7132505}
-  m_LocalPosition: {x: 0, y: 27, z: 0}
+  m_LocalPosition: {x: 0, y: 25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2645157106057106238}
   m_Father: {fileID: 4931130989775234127}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 88.58, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &1753927743188068846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3223,33 +3221,3 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 2645157106057106238}
---- !u!114 &1198613220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8375117865418872236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2fba25a5cd15594e8f050a11e386c80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ConfineMode: 1
-  m_BoundingVolume: {fileID: 0}
-  m_BoundingShape2D: {fileID: 0}
-  m_ConfineScreenEdges: 1
-  m_Damping: 0
---- !u!114 &1198613219
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8375117865418872236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38b402801d318ba4984e027725e4aeb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cinemachineConfiner: {fileID: 1198613220}
