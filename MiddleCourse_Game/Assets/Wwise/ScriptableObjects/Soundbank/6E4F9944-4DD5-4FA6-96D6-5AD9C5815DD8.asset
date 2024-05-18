@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c594500ac2e05df468bbe986bc0bcbf7, type: 3}
   m_Name: 6E4F9944-4DD5-4FA6-96D6-5AD9C5815DD8
   m_EditorClassIdentifier: 
-  objectName: Middle_CourseBanks
-  id: 2707175255
+  objectName: SoundBanks_Player
+  id: 2609652233
   guid: 6E4F9944-4DD5-4FA6-96D6-5AD9C5815DD8

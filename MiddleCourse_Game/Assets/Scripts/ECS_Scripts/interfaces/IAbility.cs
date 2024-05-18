@@ -2,7 +2,7 @@
 {
     public interface moveAbility
     {
-        void Execute();
+        void Execute(float speed);
         void Stop();
     }
 

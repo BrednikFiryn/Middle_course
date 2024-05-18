@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class PickUpAbillity : MonoBehaviour, IAbilityTarget, IConvertGameObjectToEntity, IItem
 {
-     private Entity _entity;
-     private EntityManager _dstManager;
+    [SerializeField] private AK.Wwise.Event pickEvent = null;
+    private Entity _entity;
+    private EntityManager _dstManager;
 
     public List<GameObject> targets { get; set; }
     public GameObject uIItem;
@@ -20,6 +21,7 @@ public class PickUpAbillity : MonoBehaviour, IAbilityTarget, IConvertGameObjectT
             if (character == null) return;
             if (character != null) character.Score(3);
             var item = Object.Instantiate(UIItem, character.InventoryUIRoot.transform, false);
+            pickEvent.Post(gameObject);
             _dstManager.DestroyEntity(_entity);
             Destroy(this.gameObject);
         }

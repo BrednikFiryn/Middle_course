@@ -3,10 +3,28 @@
 	<SoundBanks>
 		<WorkUnit Name="Default Work Unit" ID="{DA1A1EA7-4CE8-4FB1-9FD6-E1A15F33E67A}" PersistMode="Standalone">
 			<ChildrenList>
-				<SoundBank Name="Middle_CourseBanks" ID="{6E4F9944-4DD5-4FA6-96D6-5AD9C5815DD8}">
+				<SoundBank Name="SoundBanks_Player" ID="{6E4F9944-4DD5-4FA6-96D6-5AD9C5815DD8}">
 					<ObjectInclusionList>
-						<ObjectRef Name="Shoot" ID="{62623AB3-1C11-49B1-8B25-753149D7E9A3}" WorkUnitID="{9C501CDD-9C37-4C0A-A0BD-837BFF640CAB}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="ItemEguipt" ID="{BC35C16B-FEA7-49FD-9DC9-794F52518EBB}" WorkUnitID="{9C501CDD-9C37-4C0A-A0BD-837BFF640CAB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Message_DeathPlayer_1" ID="{75BB5B57-3BDA-402F-89A6-9D5DEDA815A1}" WorkUnitID="{9C501CDD-9C37-4C0A-A0BD-837BFF640CAB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="ItemEguipt" ID="{8AFCE1EB-BFE4-4058-8BE2-401CF19F4D99}" WorkUnitID="{9C501CDD-9C37-4C0A-A0BD-837BFF640CAB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="BackSound" ID="{791255D9-2CEE-4168-9B70-99A8C74DF8EF}" WorkUnitID="{9C501CDD-9C37-4C0A-A0BD-837BFF640CAB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Torch" ID="{02733B52-23E1-41FA-951E-84226689435F}" WorkUnitID="{9C501CDD-9C37-4C0A-A0BD-837BFF640CAB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Walk" ID="{0381C41F-4598-428F-AFBF-C20785933DF5}" WorkUnitID="{9C501CDD-9C37-4C0A-A0BD-837BFF640CAB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Button" ID="{FD3950A2-F43E-45EB-8319-AEA9E4FBB83E}" WorkUnitID="{9C501CDD-9C37-4C0A-A0BD-837BFF640CAB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Win" ID="{56C87BEB-8521-48AC-95B4-E2D596B8651F}" WorkUnitID="{9C501CDD-9C37-4C0A-A0BD-837BFF640CAB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Shoot" ID="{955C2D4C-E281-4B96-B22D-D8B8C2FC7BC0}" WorkUnitID="{9C501CDD-9C37-4C0A-A0BD-837BFF640CAB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Kit" ID="{2D7EC326-E85C-4D81-92AE-BD087CC9993B}" WorkUnitID="{9C501CDD-9C37-4C0A-A0BD-837BFF640CAB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="DeathPlayer_1" ID="{7A9B2C90-7DEF-4E1D-8EF8-8BF62A761C81}" WorkUnitID="{9C501CDD-9C37-4C0A-A0BD-837BFF640CAB}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+				<SoundBank Name="SoundBanks_Invironment" ID="{A67F0BF8-E732-442B-9467-498011139904}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Zombi_Death" ID="{9C5C49FF-911E-4783-AEB3-92372566DA5A}" WorkUnitID="{9C501CDD-9C37-4C0A-A0BD-837BFF640CAB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="TrapSound_1" ID="{71765389-1BBD-4A3F-8C59-5A1B2AB224AE}" WorkUnitID="{9C501CDD-9C37-4C0A-A0BD-837BFF640CAB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Zombi_Walk" ID="{BA313947-9042-4D9F-AAF0-829897C2D0B6}" WorkUnitID="{9C501CDD-9C37-4C0A-A0BD-837BFF640CAB}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="DamageHero_1" ID="{E2E6695B-2FF3-4DAD-847D-F61CA1CA3424}" WorkUnitID="{9C501CDD-9C37-4C0A-A0BD-837BFF640CAB}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

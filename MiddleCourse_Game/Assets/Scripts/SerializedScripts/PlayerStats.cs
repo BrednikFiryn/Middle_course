@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     [SerializeField] private SettingsWarrior settingsWarrior;
+    [SerializeField] private AK.Wwise.Event damageEvent = null;
     public float healthHero;
 
     private async void Awake()
@@ -48,6 +49,7 @@ public class PlayerStats : MonoBehaviour
     public void Damage(float damage)
     {
         settingsWarrior.health -= damage;
+        damageEvent.Post(gameObject);
 
         if (damage >= settingsWarrior.health)
         {

@@ -22,32 +22,148 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="2707175255" Type="User" Language="SFX" Hash="{8E54DBE3-FE59-3755-7081-72C212988117}">
-			<ShortName>Middle_CourseBanks</ShortName>
-			<Path>Middle_CourseBanks.bnk</Path>
+		<SoundBank Id="2609652233" Type="User" Language="SFX" Hash="{7ACDDF99-F3D1-71D9-A2A2-8284C72D4015}">
+			<ShortName>SoundBanks_Player</ShortName>
+			<Path>SoundBanks_Player.bnk</Path>
 			<Media>
-				<File Id="305551583" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Shoot.wav</ShortName>
-					<CachePath>SFX/Shoot_818F3B66.wem</CachePath>
+				<File Id="126846403" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>FireEnemy.wav</ShortName>
+					<CachePath>SFX/FireEnemy_818F3B66.wem</CachePath>
+				</File>
+				<File Id="350827252" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>DeathPlayer_1.wav</ShortName>
+					<CachePath>SFX/DeathPlayer_1_818F3B66.wem</CachePath>
 				</File>
 				<File Id="377558400" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>ItemEguipt.wav</ShortName>
 					<CachePath>SFX/ItemEguipt_818F3B66.wem</CachePath>
 				</File>
+				<File Id="410666982" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Win.wav</ShortName>
+					<CachePath>SFX/Win_818F3B66.wem</CachePath>
+				</File>
+				<File Id="413719954" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Message_Death Player_1.wav</ShortName>
+					<CachePath>SFX/Message_Death Player_1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="632720337" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Walk.wav</ShortName>
+					<CachePath>SFX/Walk_818F3B66.wem</CachePath>
+				</File>
+				<File Id="744999801" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Button.wav</ShortName>
+					<CachePath>SFX/Button_818F3B66.wem</CachePath>
+				</File>
+				<File Id="870904249" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>меню-Апокалипсис.wav</ShortName>
+					<CachePath>SFX/меню-Апокалипсис_818F3B66.wem</CachePath>
+				</File>
+				<File Id="992171175" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Torch.wav</ShortName>
+					<CachePath>SFX/Torch_11A93380.wem</CachePath>
+				</File>
+				<File Id="1072072545" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Kit.wav</ShortName>
+					<CachePath>SFX/Kit_818F3B66.wem</CachePath>
+				</File>
 			</Media>
 			<Events>
+				<Event Id="1820043245" Name="BackSound" DurationType="OneShot" DurationMin="60.081635" DurationMax="60.081635">
+					<MediaRefs>
+						<MediaRef Id="870904249"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="977454165" Name="Button" DurationType="OneShot" DurationMin="1.7763265" DurationMax="1.7763265">
+					<MediaRefs>
+						<MediaRef Id="744999801"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3806940454" Name="DeathPlayer_1" DurationType="OneShot" DurationMin="2.04" DurationMax="2.04">
+					<MediaRefs>
+						<MediaRef Id="350827252"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="2147347314" Name="ItemEguipt" DurationType="OneShot" DurationMin="0.816" DurationMax="0.816">
 					<MediaRefs>
 						<MediaRef Id="377558400"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3038207054" Name="Shoot" DurationType="OneShot" DurationMin="0.9404082" DurationMax="0.9404082">
+				<Event Id="1115957467" Name="Kit" DurationType="OneShot" DurationMin="2.4032652" DurationMax="2.4032652">
 					<MediaRefs>
-						<MediaRef Id="305551583"/>
+						<MediaRef Id="1072072545"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1293224490" Name="Message_DeathPlayer_1" DurationType="OneShot" DurationMin="1.8808163" DurationMax="1.8808163">
+					<MediaRefs>
+						<MediaRef Id="413719954"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3038207054" Name="Shoot" DurationType="OneShot" DurationMin="1.512" DurationMax="1.512">
+					<MediaRefs>
+						<MediaRef Id="126846403"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1904864137" Name="Torch" MaxAttenuation="20" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="992171175"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2108779966" Name="Walk" DurationType="OneShot" DurationMin="0.35265306" DurationMax="0.35265306">
+					<MediaRefs>
+						<MediaRef Id="632720337"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="979765101" Name="Win" DurationType="OneShot" DurationMin="8.712" DurationMax="8.712">
+					<MediaRefs>
+						<MediaRef Id="410666982"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="3142123241" Type="User" Language="SFX" Hash="{C5D48771-4627-523B-EC0A-A3107BEDCD2C}">
+			<ShortName>SoundBanks_Invironment</ShortName>
+			<Path>SoundBanks_Invironment.bnk</Path>
+			<Media>
+				<File Id="55345886" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Zombi_Death.wav</ShortName>
+					<CachePath>SFX/Zombi_Death_818F3B66.wem</CachePath>
+				</File>
+				<File Id="506286435" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>TrapSound_1.wav</ShortName>
+					<CachePath>SFX/TrapSound_1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="533201279" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>DamageHero_1.wav</ShortName>
+					<CachePath>SFX/DamageHero_1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="604489486" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Zombi_Walk.wav</ShortName>
+					<CachePath>SFX/Zombi_Walk_818F3B66.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="145633378" Name="DamageHero_1" DurationType="OneShot" DurationMin="1.128" DurationMax="1.128">
+					<MediaRefs>
+						<MediaRef Id="533201279"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3858960569" Name="TrapSound_1" MaxAttenuation="20" DurationType="OneShot" DurationMin="1.128" DurationMax="1.128">
+					<MediaRefs>
+						<MediaRef Id="506286435"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3653025257" Name="Zombi_Death" MaxAttenuation="20" DurationType="OneShot" DurationMin="1.056" DurationMax="1.056">
+					<MediaRefs>
+						<MediaRef Id="55345886"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2548826710" Name="Zombi_Walk" MaxAttenuation="20" DurationType="OneShot" DurationMin="4.488" DurationMax="4.488">
+					<MediaRefs>
+						<MediaRef Id="604489486"/>
 					</MediaRefs>
 				</Event>
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{1233DFA9-5EE3-2C7E-3411-D893C6480165}</FileHash>
+	<FileHash>{EAFB5CD8-A30F-AEAC-CF7D-9B0E987390B7}</FileHash>
 </SoundBanksInfo>

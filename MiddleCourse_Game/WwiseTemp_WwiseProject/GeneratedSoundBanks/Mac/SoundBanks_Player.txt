@@ -1,0 +1,24 @@
+Event	ID	Name			Wwise Object Path	Notes
+	977454165	Button			\Default Work Unit\Button	
+	979765101	Win			\Default Work Unit\Win	
+	1115957467	Kit			\Default Work Unit\Kit	
+	1293224490	Message_DeathPlayer_1			\Default Work Unit\Message_DeathPlayer_1	
+	1820043245	BackSound			\Default Work Unit\BackSound	
+	1904864137	Torch			\Default Work Unit\Torch	
+	2108779966	Walk			\Default Work Unit\Walk	
+	2147347314	ItemEguipt			\Default Work Unit\ItemEguipt	
+	3038207054	Shoot			\Default Work Unit\Shoot	
+	3806940454	DeathPlayer_1			\Default Work Unit\DeathPlayer_1	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	126846403	FireEnemy	D:\Middle_course\MiddleCourse_Game\WwiseTemp_WwiseProject\.cache\Mac\SFX\FireEnemy_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\FireEnemy		290400
+	350827252	DeathPlayer_1	D:\Middle_course\MiddleCourse_Game\WwiseTemp_WwiseProject\.cache\Mac\SFX\DeathPlayer_1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\DeathPlayer_1		391776
+	377558400	ItemEguipt	D:\Middle_course\MiddleCourse_Game\WwiseTemp_WwiseProject\.cache\Mac\SFX\ItemEguipt_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\ItemEguipt		78432
+	410666982	Win	D:\Middle_course\MiddleCourse_Game\WwiseTemp_WwiseProject\.cache\Mac\SFX\Win_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Win		1672800
+	413719954	Message_Death Player_1	D:\Middle_course\MiddleCourse_Game\WwiseTemp_WwiseProject\.cache\Mac\SFX\Message_Death Player_1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Message_Death Player_1		331872
+	632720337	Walk	D:\Middle_course\MiddleCourse_Game\WwiseTemp_WwiseProject\.cache\Mac\SFX\Walk_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Walk		31200
+	744999801	Button	D:\Middle_course\MiddleCourse_Game\WwiseTemp_WwiseProject\.cache\Mac\SFX\Button_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Button		313440
+	870904249	BackSound	D:\Middle_course\MiddleCourse_Game\WwiseTemp_WwiseProject\.cache\Mac\SFX\меню-Апокалипсис_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\BackSound		10598496
+	992171175	Torch	D:\Middle_course\MiddleCourse_Game\WwiseTemp_WwiseProject\.cache\Mac\SFX\Torch_11A93380.wem		\Actor-Mixer Hierarchy\Default Work Unit\Torch		594016
+	1072072545	Kit	D:\Middle_course\MiddleCourse_Game\WwiseTemp_WwiseProject\.cache\Mac\SFX\Kit_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Kit		424032
+

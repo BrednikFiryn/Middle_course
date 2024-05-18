@@ -32,7 +32,7 @@ public class CharacterMoveSystem : ComponentSystem
           (Entity entity, ref InputData inputData, UserInputData input, Transform transform) =>
           {
               //Проверка, существует ли действие движения и является ли оно экземпляром класса moveAbility.
-              if (input.moveAction != null  && input.moveAction is moveAbility ability)
+              if (input.moveAction != null && input.moveAction is moveAbility ability)
               {
                   //Создание вектора направления на основе данных ввода о движении.
                   Vector3 direction = new Vector3(inputData.move.x, 0, inputData.move.y);

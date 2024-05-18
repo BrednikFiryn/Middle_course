@@ -92,6 +92,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   treatment: 0.4
+  treatmentEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: f70e382b1870893438690d0339956aad, type: 2}
 --- !u!114 &-6486091885303401044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,3 +177,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shieldDelay: 4
+  _shield: {fileID: 0}

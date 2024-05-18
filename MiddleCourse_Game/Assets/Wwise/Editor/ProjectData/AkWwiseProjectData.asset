@@ -66,11 +66,11 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: a71e1adae84cb14f9fd6e1a15f33e67a
     GuidInternal: 
-    m_lastTime: -8584871004634775808
+    m_lastTime: -8584855543917117698
     List:
-    - name: Middle_CourseBanks
-      guid: 44994f6ed54da64f96d65ad9c5815dd8
-      id: 2707175255
+    - name: SoundBanks_Invironment
+      guid: f80b7fa632e72b449467498011139904
+      id: 3142123241
       PathAndIcons:
       - ElementName: SoundBanks
         ObjectType: 5
@@ -78,10 +78,24 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: a71e1adae84cb14f9fd6e1a15f33e67a
-      - ElementName: Middle_CourseBanks
+      - ElementName: SoundBanks_Invironment
+        ObjectType: 7
+        guid: f80b7fa632e72b449467498011139904
+      Path: SoundBanks\Default Work Unit\SoundBanks_Invironment
+    - name: SoundBanks_Player
+      guid: 44994f6ed54da64f96d65ad9c5815dd8
+      id: 2609652233
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a71e1adae84cb14f9fd6e1a15f33e67a
+      - ElementName: SoundBanks_Player
         ObjectType: 7
         guid: 44994f6ed54da64f96d65ad9c5815dd8
-      Path: SoundBanks\Default Work Unit\Middle_CourseBanks
+      Path: SoundBanks\Default Work Unit\SoundBanks_Player
   EventWwu:
   - PhysicalPath: Events\Default Work Unit.wwu
     PathAndIcons:
@@ -94,10 +108,78 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: dd1c509c379c0a4ca0bd837bff640cab
     GuidInternal: 
-    m_lastTime: -8584871004634775808
+    m_lastTime: -8584855544509169251
     List:
+    - name: BackSound
+      guid: d9551279ee2c68419b7099a8c74df8ef
+      id: 1820043245
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: dd1c509c379c0a4ca0bd837bff640cab
+      - ElementName: BackSound
+        ObjectType: 3
+        guid: d9551279ee2c68419b7099a8c74df8ef
+      Path: Events\Default Work Unit\BackSound
+      maxAttenuation: 0
+      maxDuration: 60.081635
+      minDuration: 60.081635
+    - name: Button
+      guid: a25039fd3ef4eb458319aea9e4fbb83e
+      id: 977454165
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: dd1c509c379c0a4ca0bd837bff640cab
+      - ElementName: Button
+        ObjectType: 3
+        guid: a25039fd3ef4eb458319aea9e4fbb83e
+      Path: Events\Default Work Unit\Button
+      maxAttenuation: 0
+      maxDuration: 1.7763265
+      minDuration: 1.7763265
+    - name: DamageHero_1
+      guid: 5b69e6e2f32fad4d847df61ca1ca3424
+      id: 145633378
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: dd1c509c379c0a4ca0bd837bff640cab
+      - ElementName: DamageHero_1
+        ObjectType: 3
+        guid: 5b69e6e2f32fad4d847df61ca1ca3424
+      Path: Events\Default Work Unit\DamageHero_1
+      maxAttenuation: 0
+      maxDuration: 1.128
+      minDuration: 1.128
+    - name: DeathPlayer_1
+      guid: 902c9b7aef7d1d4e8ef88bf62a761c81
+      id: 3806940454
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: dd1c509c379c0a4ca0bd837bff640cab
+      - ElementName: DeathPlayer_1
+        ObjectType: 3
+        guid: 902c9b7aef7d1d4e8ef88bf62a761c81
+      Path: Events\Default Work Unit\DeathPlayer_1
+      maxAttenuation: 0
+      maxDuration: 2.04
+      minDuration: 2.04
     - name: ItemEguipt
-      guid: 6bc135bca7fefd499dc9794f52518ebb
+      guid: ebe1fc8ae4bf58408be2401cf19f4d99
       id: 2147347314
       PathAndIcons:
       - ElementName: Events
@@ -108,13 +190,47 @@ MonoBehaviour:
         guid: dd1c509c379c0a4ca0bd837bff640cab
       - ElementName: ItemEguipt
         ObjectType: 3
-        guid: 6bc135bca7fefd499dc9794f52518ebb
+        guid: ebe1fc8ae4bf58408be2401cf19f4d99
       Path: Events\Default Work Unit\ItemEguipt
       maxAttenuation: 0
       maxDuration: 0.816
       minDuration: 0.816
+    - name: Kit
+      guid: 26c37e2d5ce8814d92aebd087cc9993b
+      id: 1115957467
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: dd1c509c379c0a4ca0bd837bff640cab
+      - ElementName: Kit
+        ObjectType: 3
+        guid: 26c37e2d5ce8814d92aebd087cc9993b
+      Path: Events\Default Work Unit\Kit
+      maxAttenuation: 0
+      maxDuration: 2.4032652
+      minDuration: 2.4032652
+    - name: Message_DeathPlayer_1
+      guid: 575bbb75da3b2f4089a69d5deda815a1
+      id: 1293224490
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: dd1c509c379c0a4ca0bd837bff640cab
+      - ElementName: Message_DeathPlayer_1
+        ObjectType: 3
+        guid: 575bbb75da3b2f4089a69d5deda815a1
+      Path: Events\Default Work Unit\Message_DeathPlayer_1
+      maxAttenuation: 0
+      maxDuration: 1.8808163
+      minDuration: 1.8808163
     - name: Shoot
-      guid: b33a6262111cb1498b25753149d7e9a3
+      guid: 4c2d5c9581e2964bb22dd8b8c2fc7bc0
       id: 3038207054
       PathAndIcons:
       - ElementName: Events
@@ -125,11 +241,113 @@ MonoBehaviour:
         guid: dd1c509c379c0a4ca0bd837bff640cab
       - ElementName: Shoot
         ObjectType: 3
-        guid: b33a6262111cb1498b25753149d7e9a3
+        guid: 4c2d5c9581e2964bb22dd8b8c2fc7bc0
       Path: Events\Default Work Unit\Shoot
       maxAttenuation: 0
-      maxDuration: 0.9404082
-      minDuration: 0.9404082
+      maxDuration: 1.512
+      minDuration: 1.512
+    - name: Torch
+      guid: 523b7302e123fa41951e84226689435f
+      id: 1904864137
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: dd1c509c379c0a4ca0bd837bff640cab
+      - ElementName: Torch
+        ObjectType: 3
+        guid: 523b7302e123fa41951e84226689435f
+      Path: Events\Default Work Unit\Torch
+      maxAttenuation: 20
+      maxDuration: -1
+      minDuration: -1
+    - name: TrapSound_1
+      guid: 89537671bd1b3f4a8c595a1b2ab224ae
+      id: 3858960569
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: dd1c509c379c0a4ca0bd837bff640cab
+      - ElementName: TrapSound_1
+        ObjectType: 3
+        guid: 89537671bd1b3f4a8c595a1b2ab224ae
+      Path: Events\Default Work Unit\TrapSound_1
+      maxAttenuation: 20
+      maxDuration: 1.128
+      minDuration: 1.128
+    - name: Walk
+      guid: 1fc4810398458f42afbfc20785933df5
+      id: 2108779966
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: dd1c509c379c0a4ca0bd837bff640cab
+      - ElementName: Walk
+        ObjectType: 3
+        guid: 1fc4810398458f42afbfc20785933df5
+      Path: Events\Default Work Unit\Walk
+      maxAttenuation: 0
+      maxDuration: 0.35265306
+      minDuration: 0.35265306
+    - name: Win
+      guid: eb7bc8562185ac4895b4e2d596b8651f
+      id: 979765101
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: dd1c509c379c0a4ca0bd837bff640cab
+      - ElementName: Win
+        ObjectType: 3
+        guid: eb7bc8562185ac4895b4e2d596b8651f
+      Path: Events\Default Work Unit\Win
+      maxAttenuation: 0
+      maxDuration: 8.712
+      minDuration: 8.712
+    - name: Zombi_Death
+      guid: ff495c9c1e918347aeb392372566da5a
+      id: 3653025257
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: dd1c509c379c0a4ca0bd837bff640cab
+      - ElementName: Zombi_Death
+        ObjectType: 3
+        guid: ff495c9c1e918347aeb392372566da5a
+      Path: Events\Default Work Unit\Zombi_Death
+      maxAttenuation: 20
+      maxDuration: 1.056
+      minDuration: 1.056
+    - name: Zombi_Walk
+      guid: 473931ba42909f4daaf0829897c2d0b6
+      id: 2548826710
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: dd1c509c379c0a4ca0bd837bff640cab
+      - ElementName: Zombi_Walk
+        ObjectType: 3
+        guid: 473931ba42909f4daaf0829897c2d0b6
+      Path: Events\Default Work Unit\Zombi_Walk
+      maxAttenuation: 20
+      maxDuration: 4.488
+      minDuration: 4.488
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -186,7 +404,7 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8584871004634775808
     List: []
-  ExpandedFileSystemItemIds: 0200000003000000090000000a000000
+  ExpandedFileSystemItemIds: 0200000003000000090000000a0000000e0000000f0000001200000013000000
   ExpandedWaapiItemIds: 02000000030000000400000006000000090000000a000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1

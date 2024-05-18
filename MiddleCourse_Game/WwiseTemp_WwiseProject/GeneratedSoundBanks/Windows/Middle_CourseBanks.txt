@@ -1,8 +1,0 @@
-Event	ID	Name			Wwise Object Path	Notes
-	2147347314	ItemEguipt			\Default Work Unit\ItemEguipt	
-	3038207054	Shoot			\Default Work Unit\Shoot	
-
-In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	305551583	Shoot	D:\Middle_course\MiddleCourse_Game\WwiseTemp_WwiseProject\.cache\Windows\SFX\Shoot_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Shoot		83040
-	377558400	ItemEguipt	D:\Middle_course\MiddleCourse_Game\WwiseTemp_WwiseProject\.cache\Windows\SFX\ItemEguipt_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\ItemEguipt		78432
-

@@ -1,0 +1,12 @@
+Event	ID	Name			Wwise Object Path	Notes
+	145633378	DamageHero_1			\Default Work Unit\DamageHero_1	
+	2548826710	Zombi_Walk			\Default Work Unit\Zombi_Walk	
+	3653025257	Zombi_Death			\Default Work Unit\Zombi_Death	
+	3858960569	TrapSound_1			\Default Work Unit\TrapSound_1	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	55345886	Zombi_Death	D:\Middle_course\MiddleCourse_Game\WwiseTemp_WwiseProject\.cache\Mac\SFX\Zombi_Death_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Zombi_Death		202848
+	506286435	TrapSound_1	D:\Middle_course\MiddleCourse_Game\WwiseTemp_WwiseProject\.cache\Mac\SFX\TrapSound_1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\TrapSound_1		216672
+	533201279	DamageHero_1	D:\Middle_course\MiddleCourse_Game\WwiseTemp_WwiseProject\.cache\Mac\SFX\DamageHero_1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\DamageHero_1		216672
+	604489486	Zombi_Walk	D:\Middle_course\MiddleCourse_Game\WwiseTemp_WwiseProject\.cache\Mac\SFX\Zombi_Walk_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Zombi_Walk		861792
+

@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a2f50bb1c353948a1db5894cf2713e, type: 3}
+  m_Name: 71765389-1BBD-4A3F-8C59-5A1B2AB224AE
+  m_EditorClassIdentifier: 
+  objectName: TrapSound_1
+  id: 3858960569
+  guid: 71765389-1BBD-4A3F-8C59-5A1B2AB224AE

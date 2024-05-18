@@ -9,13 +9,16 @@ public class HealthBar : MonoBehaviour
     [SerializeField] private SettingsWarrior settingsWarrior;
     [SerializeField] private Animator animDeath;
     [SerializeField] private PlayerStats playerStats;
+    [SerializeField] private AK.Wwise.Event deathEvent = null;
     private GameObject _healthBar;
     private Image _healthCount;
     private ViewModel _viewModel;
+    private DeathMenu _deathMenu;
     public float health;
 
     private void Start()
     {
+        _deathMenu = FindObjectOfType<DeathMenu>();
         _viewModel = FindObjectOfType<ViewModel>();
         HealthStatus();
         Invoke("HealthCheck", 1);
@@ -39,7 +42,10 @@ public class HealthBar : MonoBehaviour
         {
             health = 0;
             animDeath.SetBool(deathAnimHash, true);
-            playerStats.EntityDestroy();         
+            deathEvent.Post(gameObject);
+            playerStats.EntityDestroy();
+            _deathMenu.GameOver();
+
         }
         else if (health > 1) health = 1;
     }
